@@ -1,0 +1,689 @@
+
+
+
+/*===== All Button Common Style =====*/
+
+.main-btn {
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	@include user-select(none);
+	border: 0;
+	padding: 0 16px;
+	font-size: 16px;
+    font-weight: 500;
+	height: 40px;
+	line-height: 40px;
+    cursor: pointer;
+    z-index: 5;
+    @include transition(0.4s);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+
+    @media #{$xs}{
+        padding: 0 14px;
+	    font-size: 14px;
+    }
+    @media #{$sm}{
+        padding: 0 16px;
+	    font-size: 16px;
+    }
+    
+    & i{
+        margin: 0 3px;
+        font-size: 22px;
+        line-height: 1;
+        position: relative;
+        top: 2px;
+    }
+    & img{
+        margin: 0 5px 0 2px;
+        width: 22px;
+    }
+    
+    &::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        padding: 50%;
+        border-radius: 50%;
+        background-color: rgba($dark-color, 0.15);
+        z-index: -1;
+        color: $white-color;
+        @include transform(translate3d(-50%, -50%, 0) scale(0));
+        @include transition(0.4s);
+    }
+}
+
+
+.icon-btn{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 24px;
+    white-space: nowrap;
+	vertical-align: middle;
+	@include user-select(none);
+	border: 0;
+    cursor: pointer;
+    z-index: 5;
+    @include transition(0.4s);
+    position: relative;
+    overflow: hidden;
+    
+    & img{
+        width: 22px;
+    }
+    
+    &::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        padding: 50%;
+        border-radius: 50%;
+        background-color: rgba($dark-color, 0.15);
+        z-index: -1;
+        color: $white-color;
+        @include transform(translate3d(-50%, -50%, 0) scale(0));
+        @include transition(0.4s);
+    }
+}
+
+.btn-group{
+    &>.main-btn{
+        &:not(:last-child){
+            &:not(.toggle){
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+        
+        &:not(:first-child){
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-left: -1px;
+        }
+    }
+
+    &.group-2{
+        &>.main-btn{
+            &:not(:last-child){                
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;                
+            }
+            
+            &:not(:first-child){
+                &:not(.toggle){
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== Button Shadow Style =====*/
+
+.btn-shadow{
+    @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+}
+
+
+/*===== Primary Button Style =====*/
+
+.primary-icon,
+.primary-btn{
+    background-color: $primary-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.primary-icon-border,
+.primary-btn-border{
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    line-height: 38px;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $primary-color;
+    }
+}
+
+.primary-icon-text,
+.primary-btn-text{
+    color: $primary-color;
+    
+    &:hover{
+        color: $primary-color;
+    }
+}
+
+
+
+/*===== Secondary 1 Button Style =====*/
+
+.secondary-1-icon,
+.secondary-1-btn{
+    background-color: $secondary-1-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.secondary-1-icon-border,
+.secondary-1-btn-border{
+    border: 1px solid $secondary-1-color;
+    color: $secondary-1-color;
+    line-height: 38px;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $secondary-1-color;
+    }
+}
+
+.secondary-1-icon-text,
+.secondary-1-btn-text{
+    color: $secondary-1-color;
+    
+    &:hover{
+        color: $secondary-1-color;
+    }
+}
+
+
+
+/*===== Secondary 2 Button Style =====*/
+
+.secondary-2-icon,
+.secondary-2-btn{
+    background-color: $secondary-2-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.secondary-2-icon-border,
+.secondary-2-btn-border{
+    border: 1px solid $secondary-2-color;
+    color: $secondary-2-color;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $secondary-2-color;
+    }
+}
+
+.secondary-2-icon-text,
+.secondary-2-btn-text{
+    color: $secondary-2-color;
+    
+    &:hover{
+        color: $secondary-2-color;
+    }
+}
+
+
+
+/*===== Secondary 3 Button Style =====*/
+
+.secondary-3-icon,
+.secondary-3-btn{
+    background-color: $secondary-3-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.secondary-3-icon-border,
+.secondary-3-btn-border{
+    border: 1px solid $secondary-3-color;
+    color: $secondary-3-color;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $secondary-3-color;
+    }
+}
+
+.secondary-3-icon-text,
+.secondary-3-btn-text{
+    color: $secondary-3-color;
+    
+    &:hover{
+        color: $secondary-3-color;
+    }
+}
+
+
+
+/*===== Success Button Style =====*/
+
+.success-icon,
+.success-btn{
+    background-color: $success-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.success-icon-border,
+.success-btn-border{
+    border: 1px solid $success-color;
+    color: $success-color;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $success-color;
+    }
+}
+
+.success-icon-text,
+.success-btn-text{
+    color: $success-color;
+    
+    &:hover{
+        color: $success-color;
+    }
+}
+
+
+
+/*===== Info Button Style =====*/
+
+
+.info-icon,
+.info-btn{
+    background-color: $info-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.info-icon-border,
+.info-btn-border{
+    border: 1px solid $info-color;
+    color: $info-color;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $info-color;
+    }
+}
+
+.info-icon-text,
+.info-btn-text{
+    color: $info-color;
+    
+    &:hover{
+        color: $info-color;
+    }
+}
+
+
+
+
+/*===== Caution Button Style =====*/
+
+
+.caution-icon,
+.caution-btn{
+    background-color: $caution-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.caution-icon-border,
+.caution-btn-border{
+    border: 1px solid $caution-color;
+    color: $caution-color;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $caution-color;
+    }
+}
+
+.caution-icon-text,
+.caution-btn-text{
+    color: $caution-color;
+    
+    &:hover{
+        color: $caution-color;
+    }
+}
+
+
+
+/*===== Error Button Style =====*/
+
+.error-icon,
+.error-btn{
+    background-color: $error-color;
+    color: $white-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.error-icon-border,
+.error-btn-border{
+    border: 1px solid $error-color;
+    color: $error-color;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $error-color;
+    }
+}
+
+.error-icon-text,
+.error-btn-text{
+    color: $error-color;
+    
+    &:hover{
+        color: $error-color;
+    }
+}
+
+
+
+/*===== Gray Button Style =====*/
+
+.gray-icon,
+.gray-btn{
+    background-color: $gray-3;
+    color: $dark-light;
+        
+    &:hover{
+        color: $dark-light;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.gray-icon-border,
+.gray-btn-border{
+    border: 1px solid $dark-light;
+    color: $dark-light;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $dark-light;
+    }
+}
+
+.gray-icon-text,
+.gray-btn-text{
+    color: $dark-light;
+    
+    &:hover{
+        color: $dark-light;
+    }
+}
+
+
+
+
+/*===== White Button Style =====*/
+
+.white-icon,
+.white-btn{
+    background-color: $white-color;
+    color: $primary-color;
+        
+    &:hover{
+        color: $white-color;
+        
+        &::before{
+            @include transform(translate3d(-50%, -50%, 0) scale(1.5));
+        }
+    }
+}
+
+.white-icon-border,
+.white-btn-border{
+    border: 1px solid $white-color;
+    color: $white-color;
+    
+    &:hover{
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        color: $white-color;
+    }
+}
+
+.white-icon-text,
+.white-btn-text{
+    color: $white-color;
+    
+    &:hover{
+        color: $white-color;
+    }
+}
+
+
+/*=====  Icon Text Style =====*/
+
+
+.icon-text-wrapper{
+    & .icon-text-list{
+        padding-top: 15px;
+        
+        & li{
+            display: inline-block;
+            
+            & + li{
+                margin-left: 15px;
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+.icon-text{
+    height: 20px;
+    line-height: 20px;
+    padding: 0 8px;
+    border-radius: 18px;
+    font-weight: 500;
+    font-size: 12px;
+    
+    &.text-style-1{
+        background-color: $secondary-1-color;
+        color: $white-color;
+    }
+    &.text-style-2{
+        background-color: $secondary-1-variant;
+        color: $white-color;
+        @include box-shadow (2px 4px 8px rgba($dark-color, 0.25));
+    }
+    &.text-style-3{
+        color: $secondary-1-color;
+        border: 1px solid $secondary-1-color;
+        line-height: 18px;
+    }
+    &.text-style-4{
+        background-color: $white-color;
+        color: $secondary-1-color;
+        @include box-shadow (2px 4px 8px rgba($dark-color, 0.25)); 
+    }
+    &.text-style-5{
+        color: $secondary-2-color;
+        border: 1px solid $secondary-1-color;
+        line-height: 18px;
+    }
+    &.text-style-6{
+        background-color: $white-color;
+        color: $secondary-2-color;
+        @include box-shadow (2px 4px 8px rgba($dark-color, 0.25)); 
+    }
+    &.text-style-7{
+        color: $success-color;
+        border: 1px solid $secondary-1-color;
+        line-height: 18px;
+    }
+    &.text-style-8{
+        background-color: $white-color;
+        color: $success-color;
+        @include box-shadow (2px 4px 8px rgba($dark-color, 0.25)); 
+    }
+}
+
+
+/*=====  Icon Text Button Style =====*/
+
+.icon-text-btn{
+    position: relative;
+    overflow: visible;
+    
+    & .main-btn{
+        text-transform: capitalize;
+    }
+    
+    & .icon-text{
+        position: absolute;
+        top: -7px;
+        right: -8px;
+        z-index: 5;
+    }
+}
+
+
+
+/*=====  Product Quantity Style =====*/
+
+.product-quantity{    
+    overflow: hidden;
+    border-radius: 4px;
+    
+    & button{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        font-size: 24px;
+        border: 0;
+        background-color: transparent;
+        @include transition(0.4s);
+    }
+    & input{
+        width: 55px;
+        height: 40px;
+        border: 0;
+        padding: 0 10px;
+        text-align: center;
+        font-weight: 700;
+        background-color: transparent;
+    }
+    
+    &.quantity-1{
+        background-color: $primary-color;
+        
+        & button{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: $white-color;
+            }
+        }
+        & input{
+            color: $white-color;
+        }
+    }
+    
+    &.quantity-2{
+        background-color: $white-color;
+        border: 1px solid $gray-4;
+        
+        & button{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: $primary-color;
+            }
+        }
+        & input{
+            color: $dark-color;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

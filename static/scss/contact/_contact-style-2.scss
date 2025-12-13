@@ -1,0 +1,142 @@
+/*=====  Contact  Style 2 =====*/
+
+.contact-style-2 {
+  width: 100%;
+  padding: 35px 30px 40px;
+  border-radius: 10px;
+  @include box-shadow(2px 2px 8px rgba($dark-color, 0.32));
+
+  @media #{$xs} {
+    padding: 25px 20px 30px;
+  }
+  @media #{$sm} {
+    padding: 35px 30px 40px;
+  }
+
+  & .contact-info {
+    & li {
+      & + li {
+        padding-top: 15px;
+      }
+
+      & .single-contact-info {
+        & .contact-info-icon {
+          & i {
+            font-size: 24px;
+            color: $primary-color;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+        & .contact-info-content {
+          padding-left: 10px;
+
+          & p {
+            font-size: 14px;
+            color: $dark-color;
+          }
+        }
+      }
+    }
+  }
+
+  & .title {
+    margin-top: 25px;
+  }
+
+  & .sub-title {
+    margin-top: 10px;
+    color: $dark-color;
+  }
+
+  & .contact-social {
+    padding-top: 30px;
+
+    & p {
+      font-size: 16px;
+      color: rgba($dark-color, 0.64);
+      padding-right: 8px;
+      line-height: 40px;
+
+      @media #{$xs} {
+        line-height: 30px;
+      }
+      @media #{$sm} {
+        line-height: 40px;
+      }
+    }
+    & .social {
+      & li {
+        display: inline-block;
+        & a {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          font-size: 18px;
+          color: $primary-color;
+
+          @media #{$xs} {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+          }
+          @media #{$sm} {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*=====  Contact Dark Style 2 =====*/
+
+.contact-dark-style-2 {
+  background-color: $secondary-3-variant;
+
+  & .contact-info {
+    & li {
+      & .single-contact-info {
+        & .contact-info-icon {
+          & i {
+            color: $secondary-2-color;
+          }
+        }
+        & .contact-info-content {
+          & p {
+            color: $white-color;
+          }
+        }
+      }
+    }
+  }
+
+  & .title {
+    color: $white-color;
+  }
+
+  & .sub-title {
+    color: rgba($white-color, 0.74);
+  }
+
+  & .contact-social {
+    padding-top: 30px;
+
+    & p {
+      color: rgba($white-color, 0.74);
+      padding-right: 8px;
+      line-height: 40px;
+    }
+    & .social {
+      & li {
+        & a {
+          color: $white-color;
+        }
+      }
+    }
+  }
+}

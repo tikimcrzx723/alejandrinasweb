@@ -1,0 +1,56 @@
+
+
+/*=====  Contact  Style 1 =====*/
+
+
+.contact-style-1{
+    width: 100%;
+    padding: 55px 25px 60px;
+    border-radius: 10px;
+    @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+}
+
+
+.contact-dark-style-1{
+    background-color: $secondary-3-variant;
+    
+    & .title{
+        color: $white-color;
+    }
+    & p{
+        color: $white-color;
+    }
+    
+    
+    & .select-style-1 {
+        & label{
+            color: $white-color;
+        }
+
+        & .select-items {
+            position: relative;
+
+            & .nice-select {
+                background-color: rgba($white-color, 0.2);
+
+                &:focus {
+                    border-color: $secondary-2-color;
+                }
+
+                &::after {
+                    border-color: $white-color;
+                }
+
+                & .current {
+                    color: $white-color;
+                }
+            }
+
+            & i{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+

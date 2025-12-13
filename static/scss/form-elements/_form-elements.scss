@@ -1,0 +1,1282 @@
+/*===== All checkbox Style =====*/
+
+.single-checkbox {
+    margin-top: 16px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    
+    & input[type="checkbox"] {
+        display: none;
+
+        & + label {
+            & span {
+                width: 20px;
+                height: 20px;
+                border: 2px solid;
+                border-radius: 4px;
+                cursor: pointer;
+                position: relative;
+                display: inline-block;
+                margin: 0 5px -3px 0;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    font: normal normal normal 24px "Material Design Icons";
+                    font-size: inherit;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    @include transition(0.4s);
+                    @include transform(scale(0));
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(1));
+                    }
+                }
+            }
+        }
+    }
+
+    & label {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    
+    & p{
+        display: inline-block;
+        color: $dark-color;
+        padding-left: 5px;
+    }
+}
+
+.checkbox-round {
+    & input[type="checkbox"] {
+        & + label {
+            & span {
+                border-radius: 50%;
+
+                &::before {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+
+/*===== checkbox Style 1 =====*/
+
+
+.checkbox-style-1 {
+    & input[type="checkbox"] {
+
+        & + label {
+            & span {
+                border-color: $primary-color;
+
+                &::before {
+                    content: "\F012C";
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(1));
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== checkbox Style 2 =====*/
+
+
+.checkbox-style-2 {
+    & input[type="checkbox"] {
+
+        & + label {
+            & span {
+                border-color: $primary-color;
+
+                &::before {
+                    background-color: $primary-color;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(0.8));
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== checkbox Style 3 =====*/
+
+
+.checkbox-style-3 {
+    & input[type="checkbox"] {
+
+        & + label {
+            & span {
+                border-color: $primary-color;
+
+                &::before {
+                    content: "\F012C";
+                    background-color: $primary-color;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(1));
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== checkbox Style 4 =====*/
+
+
+.checkbox-style-4 {
+    & input[type="checkbox"] {
+
+        & + label {
+            & span {
+                border-color: $dark-light;
+
+                &::before {
+                    content: "\F012C";
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &:before {
+                        @include transform(scale(1));
+                        color: $dark-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== checkbox Style 5 =====*/
+
+
+.checkbox-style-5 {
+    & input[type="checkbox"] {
+
+        & + label {
+            & span {
+                border-color: $dark-light;
+
+                &::before {
+                    background-color: $dark-light;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(0.8));
+                        color: $dark-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== checkbox Style 6 =====*/
+
+.checkbox-style-6 {
+    & input[type="checkbox"] {
+        & + label {
+            & span {
+                border-color: $dark-light;
+
+                &::before {
+                    background-color: $dark-light;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        content: "\F012C";
+                        @include transform(scale(1));
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== Switch Style 1 =====*/
+
+.switch-button {
+    margin-top: 16px;
+    
+    & input[type="checkbox"] {
+        display: none;
+
+        & + label {
+            margin-bottom: 0;
+
+            & span {
+                position: relative;
+                cursor: pointer;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    border-radius: 50px;
+                    background-color: $gray-4;
+                    @include transition(0.3s);
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    border-radius: 50%;
+                    background-color: $gray-2;
+                    @include transition(0.3s);
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+                    &::before {
+                        background-color: $primary-light;
+                    }
+
+                    &::after {
+                        @include transform(translateX(24px));
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    & p {
+        display: inline-block;
+        position: relative;
+        top: -7px;
+        padding-left: 7px;
+    }
+
+    &.switch-style-1 {
+        & input[type="checkbox"] {
+
+            & + label {
+                & span {
+                    width: 50px;
+                    height: 26px;
+
+                    &::after {
+                        width: 20px;
+                        height: 20px;
+                        top: 3px;
+                        left: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.switch-style-2 {
+        & input[type="checkbox"] {
+
+            & + label {
+                & span {
+                    width: 50px;
+                    height: 26px;
+
+                    &::before {
+                        height: 70%;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                    }
+
+                    &::after {
+                        width: 26px;
+                        height: 26px;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== All Radio Style =====*/
+
+.single-radio {
+    margin-top: 16px;
+    
+    & input[type="radio"] {
+        display: none;
+
+        & + label {
+            & span {
+                width: 20px;
+                height: 20px;
+                border: 2px solid;
+                border-radius: 4px;
+                cursor: pointer;
+                position: relative;
+                display: inline-block;
+                margin: 0 5px -4px 0;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    @include transition(0.4s);
+                    @include transform(scale(0));
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(1));
+                    }
+                }
+            }
+        }
+    }
+
+    & label {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+}
+
+.radio-round {
+    & input[type="radio"] {
+        & + label {
+            & span {
+                border-radius: 50%;
+
+                &::before {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+
+/*===== Radio Style 1 =====*/
+
+
+.radio-style-1 {
+    & input[type="radio"] {
+
+        & + label {
+            & span {
+                border-color: $primary-color;
+
+                &::before {
+                    background-color: $primary-color;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(1));
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== Radio Style 2 =====*/
+
+
+.radio-style-2 {
+    & input[type="radio"] {
+
+        & + label {
+            & span {
+                border-color: $primary-color;
+
+                &::before {
+                    background-color: $primary-color;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(0.8));
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== Radio Style 3 =====*/
+
+
+.radio-style-3 {
+    & input[type="radio"] {
+
+        & + label {
+            & span {
+                border-color: $dark-light;
+
+                &::before {
+                    background-color: $dark-light;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(1));
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*===== Radio Style 4 =====*/
+
+
+.radio-style-4 {
+    & input[type="radio"] {
+
+        & + label {
+            & span {
+                border-color: $dark-light;
+
+                &::before {
+                    background-color: $dark-light;
+                }
+            }
+        }
+
+        &:checked {
+            & + label {
+                & span {
+
+                    &::before {
+                        @include transform(scale(0.8));
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== Select Style 1 =====*/
+
+
+.select-style-1 {
+    margin-top: 16px;
+    position: relative;
+    
+    & label{
+        margin-bottom: 10px;
+        font-size: 13px;
+        margin-left: 18px;
+        font-weight: 300;
+        text-align: left !important;
+    }
+    
+    & .select-items {
+        position: relative;
+        
+        & .nice-select {
+            width: 100%;
+            border: 1px solid transparent;
+            height: 40px;
+            line-height: 40px;
+            background-color: $primary-color;
+            padding-left: 40px;
+            float: none;
+
+            &:focus {}
+
+            &::after {
+                width: 8px;
+                height: 8px;
+                right: 20px;
+                border-color: $white-color;
+            }
+
+            & .current {
+                font-size: 16px;
+                color: $white-color;
+                line-height: 38px;
+            }
+
+            & .list {
+                width: 100%;
+                background-color: $primary-color;
+
+                & .option {
+                    background-color: $primary-color;
+                    color: $white-color;
+
+                    &.selected {
+                        background-color: $primary-variant;
+                    }
+
+                    &:hover {
+                        background-color: $primary-variant !important;
+                    }
+                }
+
+                &:hover {
+                    & .option:not(:hover) {
+                        background-color: $primary-color !important;
+                    }
+                }
+            }
+        }
+        
+        & i{
+            position: absolute;
+            top: 1px;
+            left: 10px;
+            font-size: 24px;
+            color: $white-color;
+        }
+        
+        &.select{
+            & .nice-select {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+
+
+/*===== Select Style 2 =====*/
+
+
+.select-style-2 {
+    margin-top: 16px;
+    position: relative;
+    
+    & label{
+        margin-bottom: 10px;
+        font-size: 13px;
+        margin-left: 18px;
+        font-weight: 300;
+        text-align: left !important;
+    }
+    
+    & .select-items {
+        position: relative;
+        
+        & .nice-select {
+            width: 100%;
+            border: 1px solid transparent;
+            height: 40px;
+            line-height: 40px;
+            background-color: $gray-4;
+            padding-left: 40px;
+            float: none;
+
+            &:focus {
+                border-color: $primary-color;
+            }
+
+            &::after {
+                width: 8px;
+                height: 8px;
+                right: 20px;
+                border-color: $dark-color;
+            }
+
+            & .current {
+                font-size: 16px;
+                color: $dark-color;
+                line-height: 38px;
+            }
+
+            & .list {
+                width: 100%;
+
+                & .option {
+
+                    &.selected {}
+
+                    &:hover {}
+                }
+
+                &:hover {
+                    & .option:not(:hover) {}
+                }
+            }
+        }
+        
+        & i{
+            position: absolute;
+            top: 1px;
+            left: 10px;
+            font-size: 24px;
+            color: $dark-color;
+        }
+        
+        &.select{
+            & .nice-select {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+
+
+/*===== Select Style 3 =====*/
+
+.select-style-3 {
+    margin-top: 16px;
+    position: relative;
+    
+    & label{
+        margin-bottom: 10px;
+        font-size: 13px;
+        margin-left: 18px;
+        font-weight: 300;
+        text-align: left !important;
+    }
+    
+    & .select-items {
+        position: relative;
+        
+        & .nice-select {
+            width: 100%;
+            border: 1px solid $primary-color;
+            height: 40px;
+            line-height: 40px;
+            background-color: transparent;
+            padding-left: 40px;
+            float: none;
+
+            &:focus {
+
+            }
+
+            &::after {
+                width: 8px;
+                height: 8px;
+                right: 20px;
+                border-color: $dark-color;
+            }
+
+            & .current {
+                font-size: 16px;
+                color: $dark-color;
+                line-height: 38px;
+            }
+
+            & .list {
+                width: 100%;
+                background-color: $primary-color;
+
+                & .option {
+                    background-color: $primary-color;
+                    color: $white-color;
+
+                    &.selected {
+                        background-color: $primary-variant;
+                    }
+
+                    &:hover {
+                        background-color: $primary-variant !important;
+                    }
+                }
+
+                &:hover {
+                    & .option:not(:hover) {
+                        background-color: $primary-color !important;
+                    }
+                }
+            }
+        }
+        
+        & i{
+            position: absolute;
+            top: 2px;
+            left: 10px;
+            font-size: 24px;
+            color: $primary-color;
+        }
+        
+        &.select{
+            & .nice-select {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+
+
+/*===== Select Style 4 =====*/
+
+.select-style-4 {
+    margin-top: 16px;
+    position: relative;
+    
+    & label{
+        margin-bottom: 10px;
+        font-size: 13px;
+        margin-left: 18px;
+        font-weight: 300;
+        text-align: left !important;
+    }
+    
+    & .select-items {
+        position: relative;
+        
+        & .nice-select {
+            width: 100%;
+            border: 1px solid $dark-light;
+            height: 40px;
+            line-height: 40px;
+            background-color: transparent;
+            padding-left: 40px;
+            float: none;
+
+            &:focus {}
+
+            &::after {
+                width: 8px;
+                height: 8px;
+                right: 20px;
+                border-color: $dark-color;
+            }
+
+            & .current {
+                font-size: 16px;
+                color: $dark-color;
+                line-height: 38px;
+            }
+
+            & .list {
+                width: 100%;
+
+                & .option {
+
+                    &.selected {}
+
+                    &:hover {}
+                }
+
+                &:hover {
+                    & .option:not(:hover) {}
+                }
+            }
+        }
+        
+        & i{
+            position: absolute;
+            top: 2px;
+            left: 10px;
+            font-size: 24px;
+            color: $dark-color;
+        }
+        
+        &.select{
+            & .nice-select {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+
+
+/*===== form Style =====*/
+
+.single-form{
+    margin-top: 16px;
+    position: relative;
+    
+    & label{
+        margin-bottom: 10px;
+        font-size: 13px;
+        margin-left: 18px;
+        font-weight: 300;
+        text-align: left !important;
+    }
+    & .form-input{
+        position: relative;
+
+        & + .form-input{
+            @media #{$xs}{
+                margin-top: 16px;
+            }
+        }
+        
+        & textarea,
+        & input{
+            width: 100%;
+            height: 40px;
+            padding: 0 15px;
+            padding-left: 40px;
+            border-radius: 4px;
+            @include transition(0.3s);
+            border: 1px solid transparent;
+        }        
+        
+        & textarea{
+            padding-top: 7px;
+            resize: none;
+            height: 120px;
+        }
+        
+        & i{
+            position: absolute;
+            top: 1px;
+            left: 10px;
+            font-size: 24px;
+        }
+        & img{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            @include transform(translateY(-50%));
+        }
+        & .form-error{
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        
+        &.form{
+            & textarea,
+            & input{
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+
+/*===== Form Default Style =====*/
+
+.form-default{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: $dark-light;
+                background-color: transparent;
+            }
+        }
+    }
+
+    & label{
+        color: $dark-variant;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $dark-variant;
+            background-color: $gray-4;
+
+            &:focus{
+                border-color: $primary-color;
+            }
+        }
+        
+        & i{
+            color: $dark-light;
+        }
+        
+        & .form-error{
+            color: $dark-light;
+        }
+    }
+}
+
+
+
+/*===== Form White Style =====*/
+
+.form-white{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: rgba($white-color, 0.24);
+                background-color: transparent;                
+            }
+        }
+    }
+
+    & label{
+        color: $white-color;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $white-color;
+            background-color: rgba($white-color, 0.2);
+
+            &:focus{
+                border-color: $secondary-2-color;
+            }
+        }
+        
+        & i{
+            color: rgba($white-color, 0.6);
+        }
+        
+        & .form-error{
+            color: $white-color;
+        }
+    }
+}
+
+
+
+/*===== Form Primary Style =====*/
+
+.form-primary{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: $primary-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    & label{
+        color: $primary-color;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $primary-color;
+            background-color: $primary-light;
+
+            &:focus{
+                border-color: $primary-color;
+            }
+        }
+        
+        & i{
+            color: $primary-color;
+        }
+        
+        & .form-error{
+            color: $primary-color;
+        }
+    }    
+}
+
+
+
+/*===== Form Secondary Style =====*/
+
+.form-secondary{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: $secondary-2-variant;
+                background-color: transparent;
+            }
+        }
+    }
+
+    & label{
+        color: $secondary-2-variant;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $secondary-2-variant;
+            background-color: $secondary-2-light;
+
+            &:focus{
+                border-color: $secondary-2-variant;
+            }
+        }
+        
+        & i{
+            color: $secondary-2-variant;
+        }
+        
+        & .form-error{
+            color: $secondary-2-variant;
+        }
+    }    
+}
+
+
+
+
+/*===== Form Success Style =====*/
+
+.form-success{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: $success-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    & label{
+        color: $success-color;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $success-color;
+            background-color: $success-light;
+
+            &:focus{
+                border-color: $success-color;
+            }
+        }
+        
+        & i{
+            color: $success-color;
+        }
+        
+        & .form-error{
+            color: $success-color;
+        }
+    }
+}
+
+
+
+/*===== Form Info Style =====*/
+
+.form-info{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: $info-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    & label{
+        color: $info-color;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $info-color;
+            background-color: $info-light;
+
+            &:focus{
+                border-color: $info-color;
+            }
+        }
+        
+        & i{
+            color: $info-color;
+        }
+        
+        & .form-error{
+            color: $info-color;
+        }
+    }
+}
+
+
+
+/*===== Form Caution Style =====*/
+
+.form-caution{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: $caution-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    & label{
+        color: $caution-color;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $caution-color;
+            background-color: $caution-light;
+
+            &:focus{
+                border-color: $caution-color;
+            }
+        }
+        
+        & i{
+            color: $caution-color;
+        }
+        
+        & .form-error{
+            color: $caution-color;
+        }
+    }    
+}
+
+
+
+/*===== Form Error Style =====*/
+
+.form-error{
+    &.form-border{
+        & .form-input{
+            & textarea,
+            & input{
+                border-color: $error-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    & label{
+        color: $error-color;
+    }
+    & .form-input{        
+        & textarea,
+        & input{
+            color: $error-color;
+            background-color: $error-light;
+
+            &:focus{
+                border-color: $error-color;
+            }
+        }
+        
+        & i{
+            color: $error-color;
+        }
+        
+        & .form-error{
+            color: $error-color;
+        }
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+
+
+/*=====   Filter Style 2 Style =====*/
+
+
+.filter-style-4{
+    padding: 16px;
+    border-radius: 8px;
+    @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+    margin-top: 16px;
+
+    & .filter-title{
+        & .title{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 40px;
+            color: $dark-color;
+            display: block;
+            position: relative;
+
+            &::before{
+                position: absolute;
+                content: "\F0143";
+                font-family: "Material Design Icons";
+                top: 50%;
+                @include transform(translateY(-50%));
+                right: 0;
+                font-size: 24px;
+                color: $primary-color;
+            }
+
+            &.collapsed{
+                &::before{
+                    content: "\F0140";
+                }
+            }
+        }
+    }
+    
+    & .filter-size{
+        padding-top: 8px;
+
+        & ul{
+            & li{
+                display: inline-block;
+                padding: 0 10px;
+                height: 35px;
+                line-height: 33px;
+                border: 1px solid rgba($dark-color, 0.64);
+                color:rgba($dark-color, 0.64);
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 700;    
+                border-radius: 4px;   
+                margin-top: 8px;   
+                @include transition(0.3s);
+                cursor: pointer; 
+
+                @media #{$lg}{
+                    height: 30px;
+                    line-height: 28px;
+                    padding: 0 8px;
+                }
+                @media #{$xs}{
+                    height: 30px;
+                    line-height: 28px;
+                    padding: 0 8px;
+                }
+                @media #{$sm}{
+                    height: 35px;
+                    line-height: 33px;
+                    padding: 0 10px;
+                }
+                
+                &.active{
+                    background-color: $primary-color;
+                    border-color: $primary-color;
+                    color: $white-color;
+                }
+
+                & + li{
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+
+    &.filter-dark{
+        background-color: $secondary-3-variant;
+
+        & .filter-title{
+            & .title{
+                color: $white-color;
+    
+                &::before{
+                    color: $secondary-1-color;
+                }
+            }
+        }
+        & .filter-size{
+            padding-top: 8px;
+    
+            & ul{
+                & li{
+                    border: 1px solid rgba($white-color, 0.64);
+                    color:rgba($white-color, 0.64);
+                    
+                    &.active{
+                        background-color: $secondary-1-color;
+                        border-color: $secondary-1-color;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,163 @@
+
+
+
+/*=====  Checkout Payment Style 1 =====*/
+
+
+.checkout-payment-style-1{
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.32);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+
+    & .title{
+        font-size: 16px;
+        font-weight: 500;
+        color: $dark-color;
+        line-height: 40px;
+        padding: 0 16px;
+        position: relative;
+    }
+
+    & .checkout-payment-form{
+        padding: 16px;
+        padding-top: 0;
+        border-top: 1px solid $white-light;
+
+        & .payment-card-info{
+            & .single-form{
+                display: inline-block;
+
+                & label{
+                    & span{
+                        color: $caution-color;
+                    }
+                }
+                & .expiration{
+                    position: relative;
+                    
+                    &::before{
+                        position: absolute;
+                        content: '/';
+                        top: 50%;;
+                        left: 50%;
+                        @include transform(translate(-50%, -50%));
+                        color: $dark-color;
+                        font-size: 20px;
+
+                        @media #{$xs}{
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                & .form-input{
+                    width: 145px;
+
+                    & + .form-input{
+                        margin-top: 0;
+                    }
+
+                    @media #{$xs}{
+                        width: 110px;
+                    }
+                    @media #{$sm}{
+                        width: 130px;
+                    }
+
+                    & + .form-input{
+                        margin-left: 40px;
+                        
+                        @media #{$xs}{
+                            margin-left: 20px;
+                        }
+                        @media #{$sm}{
+                            margin-left: 40px;
+                        }
+                    }
+                }
+
+                & + .single-form{
+                    margin-left: 16px;
+
+                    @media #{$xs}{
+                        margin-left: 0;
+                    }
+                    @media #{$sm}{
+                        margin-left: 16px;
+                    }
+                }
+            }
+        }
+
+        & .single-form{
+
+            & .form-input{
+                & img{
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    @include transform(translateY(-50%));
+                    
+                    @media #{$xs}{
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        @include transform(translateY(0));
+                        margin-top: 8px;
+                    }
+                    @media #{$sm}{
+                        position: absolute;
+                        top: 50%;
+                        right: 10px;
+                        @include transform(translateY(-50%));
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            & .main-btn{
+                width: 240px;
+
+                @media #{$xs}{
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+
+.checkout-payment-dark-style-1{
+    background-color: $secondary-3-variant;
+
+    & .title{
+        color: $white-color;
+    }
+
+    & .checkout-payment-form{
+        border-top: 1px solid rgba($white-color, 0.2);
+
+        & .payment-card-info{
+            & .single-form{
+                & .expiration{                    
+                    &::before{
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

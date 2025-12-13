@@ -1,0 +1,699 @@
+
+/*===== All Alert Style =====*/
+
+.alert{
+    padding: 14px 16px;
+    padding-right: 40px;
+    margin-bottom: 0;
+    font-size: 16px;
+    
+    @media #{$xs}{
+        font-size: 14px;
+        padding: 10px 12px;
+        padding-right: 40px;
+    }
+    @media #{$sm}{
+        font-size: 16px;
+        padding: 14px 16px;
+        padding-right: 40px;
+    }
+    
+    &.alert-dismissible {
+        & .close{
+            padding: 9px 14px;
+            font-size: 24px;
+            
+            @media #{$xs}{
+                font-size: 20px;
+                padding: 6px 12px;
+            }
+            @media #{$sm}{
+                font-size: 24px;
+                padding: 9px 14px;
+            }
+        }
+    }
+    
+    & figure{
+        margin-bottom: 0;
+        
+        & i{
+            font-size: 24px;
+            line-height: 24px;
+            
+            @media #{$xs}{
+                font-size: 20px;
+                line-height: 20px;
+            }
+            @media #{$sm}{
+                font-size: 24px;
+                line-height: 24px;
+            }
+        }
+        & figcaption{
+            padding-left: 10px;
+            
+            & p{
+                margin-top: 8px;
+                
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+                @media #{$sm}{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/*=====  Alert Primary Style =====*/
+
+.alert-primary-light{
+    background-color: $primary-light;
+    color: $primary-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+
+.alert-primary-variant{
+    background-color: $primary-light;
+    color: $primary-variant;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-primary-bg{
+    background-color: $primary-color;
+    color: $white-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.alert-primary-variant-bg{
+    background-color: $primary-variant;
+    color: $white-color;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+
+
+/*=====  Alert Secondary 1 Style =====*/
+
+.alert-secondary-1-light{
+    background-color: $secondary-1-light;
+    color: $secondary-1-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-secondary-1-variant{
+    background-color: $secondary-1-light;
+    color: $secondary-1-variant;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-secondary-1-bg{
+    background-color: $secondary-1-color;
+    color: $white-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.alert-secondary-1-variant-bg{
+    background-color: $secondary-1-variant;
+    color: $white-color;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+
+
+/*=====  Alert Success Style =====*/
+
+.alert-success-light{
+    background-color: $success-light;
+    color: $success-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-success-variant{
+    background-color: $success-light;
+    color: $success-variant;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-success-bg{
+    background-color: $success-color;
+    color: $white-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.alert-success-variant-bg{
+    background-color: $success-variant;
+    color: $white-color;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+
+
+/*=====  Alert Info Style =====*/
+
+.alert-info-light{
+    background-color: $info-light;
+    color: $info-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-info-variant{
+    background-color: $info-light;
+    color: $info-variant;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-info-bg{
+    background-color: $info-color;
+    color: $white-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.alert-info-variant-bg{
+    background-color: $info-variant;
+    color: $white-color;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+
+
+
+/*=====  Alert Caution Style =====*/
+
+.alert-caution-light{
+    background-color: $caution-light;
+    color: $caution-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-caution-variant{
+    background-color: $caution-light;
+    color: $caution-variant;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-caution-bg{
+    background-color: $caution-color;
+    color: $white-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.alert-caution-variant-bg{
+    background-color: $caution-variant;
+    color: $white-color;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+
+
+
+/*=====  Alert Error Style =====*/
+
+.alert-error-light{
+    background-color: $error-light;
+    color: $error-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-error-variant{
+    background-color: $error-light;
+    color: $error-variant;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($dark-color, 0.8);
+            
+            &:hover{
+                color: rgba($dark-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+.alert-error-bg{
+    background-color: $error-color;
+    color: $white-color;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.alert-error-variant-bg{
+    background-color: $error-variant;
+    color: $white-color;
+    font-weight: 500;
+    
+    &.alert-dismissible {
+        & .close{
+            color: rgba($white-color, 0.8);
+            
+            &:hover{
+                color: rgba($white-color, 0.8);
+            }
+        }
+    }
+    
+    & figure{
+        & i{}
+        & figcaption{
+            & p{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

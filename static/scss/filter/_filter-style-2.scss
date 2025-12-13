@@ -1,0 +1,156 @@
+
+
+/*=====   Filter Style 2 Style =====*/
+
+
+.filter-style-2{
+    padding: 16px;
+    border-radius: 8px;
+    @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+    margin-top: 16px;
+
+    & .filter-title{
+        & .title{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 40px;
+            color: $dark-color;
+            display: block;
+            position: relative;
+
+            &::before{
+                position: absolute;
+                content: "\F0143";
+                font-family: "Material Design Icons";
+                top: 50%;
+                @include transform(translateY(-50%));
+                right: 0;
+                font-size: 24px;
+                color: $primary-color;
+            }
+
+            &.collapsed{
+                &::before{
+                    content: "\F0140";
+                }
+            }
+        }
+    }
+    & .price-range{
+        & .price-amount{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -webkit-box-pack: space-between;
+            -ms-flex-pack: space-between;
+            justify-content: space-between;
+            margin-top: 16px;
+
+            & .amount-input{
+                & label{
+                    font-weight: 300;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: $dark-color;
+                    margin-bottom: 0;
+                    display: block;
+                }
+                & input{
+                    display: inline-block; 
+                    width: 120px;
+                    height: auto;
+                    border: 0;
+                    padding: 0;
+                    border-radius: 4px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: $dark-color;
+                }
+                &:last-child{
+                    text-align: right;
+
+                    & input{
+                        text-align: right;
+                    }
+                }
+            }
+        }
+
+        & .slider-range{
+            height: 4px;
+            width: 100%;
+            border: 0;
+            border-radius: 10px;
+            background-color: $primary-light;
+            margin-top: 32px;
+            margin-bottom: 13px;
+            
+            & .ui-slider-range{
+                background-color: $primary-color;
+            }
+            & .ui-slider-handle{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: $primary-color;
+                top: -13px;
+                cursor: pointer;
+                border: 0;
+                
+                &:focus{
+                    outline: 0;
+                }
+            }
+        }
+    }
+
+    &.filter-dark{
+        background-color: $secondary-3-variant;
+
+        & .filter-title{
+            & .title{
+                color: $white-color;
+    
+                &::before{
+                    color: $secondary-1-color;
+                }
+            }
+        }
+
+        & .price-range{
+            & .price-amount{    
+                & .amount-input{
+                    & label{
+                        color: $white-color;
+                    }
+                    & input{
+                        color: $white-color;
+                        background: none;
+                    }
+                }
+            }
+    
+            & .slider-range{
+                background-color: rgba($white-color, 0.32);
+                
+                & .ui-slider-range{
+                    background-color: $secondary-1-color;
+                }
+                & .ui-slider-handle{
+                    background-color: $secondary-1-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

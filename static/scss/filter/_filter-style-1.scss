@@ -1,0 +1,52 @@
+
+
+/*=====   Filter Style 1 Style =====*/
+
+
+.filter-style-1{
+    padding: 16px;
+    border-radius: 8px;
+    @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    margin-top: 16px;
+
+    & .filter-title{
+        & .title{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 30px;
+            color: $dark-color;
+        }
+    }
+    & .filter-btn{}
+
+    &.filter-dark{
+        background-color: $secondary-3-variant;
+
+        & .filter-title{
+            & .title{
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

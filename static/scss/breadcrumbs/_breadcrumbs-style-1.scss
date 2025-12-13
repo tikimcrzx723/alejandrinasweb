@@ -1,0 +1,289 @@
+
+
+/*=====  Breadcrumbs Style =====*/
+
+.breadcrumbs-style{
+    border-radius: 8px;
+    padding: 1px 32px 16px;
+
+    @media #{$xs}{
+        padding: 1px 16px 16px;
+    }
+        
+    & .breadcrumb-left{
+        padding-top: 15px;
+        
+        & .breadcrumb{
+            margin-bottom: 0;
+            padding: 0;
+            border-radius: 0;
+            background-color: transparent;
+            
+            @media #{$xs}{
+                -ms-flex-pack: center;
+                -webkit-box-pack: center;
+                justify-content: center;
+            }
+            
+            & .breadcrumb-item{
+                position: relative;
+                line-height: 40px;
+                font-weight: 500;
+                font-size: 16px;
+
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+                
+                & + .breadcrumb-item{
+                    padding-left: 60px;
+                    
+                    @media #{$md}{
+                        padding-left: 30px;
+                    }
+                    @media #{$xs}{
+                        padding-left: 16px;
+                    }                    
+                    
+                    &::before{
+                        content: '\F0142';
+                        font-family: "Material Design Icons";
+                        font-size: 24px;
+                        position: absolute;
+                        line-height: 40px;
+                        left: 20px;
+                        padding: 0;
+                        
+                        @media #{$md}{
+                            left: 2px;
+                        }
+                        @media #{$xs}{
+                            left: -1px;
+                            font-size: 18px;
+                        }
+                        
+                    }
+                }
+                
+                & a{
+                    @include transition(0.3s);
+                }
+            }
+        }
+    }
+    & .breadcrumb-right{
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        padding-top: 15px;
+        
+        @media #{$xs}{
+            -ms-flex-pack: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+        
+        & .nice-select{
+            float: none;
+            border: 0;
+            background-color: transparent;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 0;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+
+            &::after{
+                width: 8px;
+                height: 8px;
+            }
+
+            & .current{
+                line-height: 40px;
+                font-weight: 500;
+            }
+            & .list{
+                @include box-shadow (2px 4px 8px rgba($dark-color, 0.25));
+                & .option {}
+            }
+        }
+        & .breadcrumb-list-grid{
+            padding-left: 10px;
+            
+            @media #{$xs}{
+                padding-left: 0;
+            }
+            @media #{$md}{
+                padding-left: 0;
+            }
+            
+            & li{
+                display: inline-block;
+                margin-left: 15px;
+                
+                @media #{$xs}{
+                    margin-left: 10px;
+                }
+                
+                & a{
+                    font-size: 24px;
+                    
+                    &.active{}
+                }
+            }
+        }
+    }
+    
+    /*=====  Breadcrumbs Style 01 =====*/
+    
+    &.breadcrumbs-style-1{
+        background-color: $white-variant;
+        
+        & .breadcrumb-left{
+
+            & .breadcrumb{
+                & .breadcrumb-item{
+                    color: $primary-color;
+                    
+                    & + .breadcrumb-item{
+
+                        &::before{
+                            color: $primary-color;
+                        }
+                    }
+
+                    & a{
+                        color: $dark-light;
+                        
+                        &:hover{
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+        & .breadcrumb-right{
+            & .nice-select{
+                &::after{
+                    border-color: $primary-color;
+                }
+                & .current{
+                    color: $dark-variant;
+                }
+                & .list{
+                    & .option {}
+                }
+            }
+            & .breadcrumb-list-grid{
+                & li{
+                    & a{
+                        color: $dark-light;
+                        
+                        &.active{
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /*=====  Breadcrumbs Style 02 =====*/
+    
+    &.breadcrumbs-style-2{
+        background-color: $primary-color;
+        
+        & .breadcrumb-left{
+
+            & .breadcrumb{
+                & .breadcrumb-item{
+                    color: $white-color;
+                    
+                    & + .breadcrumb-item{
+
+                        &::before{
+                            color: rgba($white-color, 0.6);
+                        }
+                    }
+
+                    & a{
+                        color: rgba($white-color, 0.6);
+                        
+                        &:hover{
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+        & .breadcrumb-right{
+            & .nice-select{                    
+                &::after{
+                    border-color: $white-color;
+                }
+    
+                & .current{
+                    color: $white-variant;
+                }
+                
+                & .list{
+                    @include box-shadow (2px 4px 8px rgba($dark-color, 0.25));
+                    background-color: transparent;
+    
+                    & .option {
+                        background-color: $primary-color;
+                        color: $white-color;
+    
+                        &.selected {
+                            background-color: $primary-variant;
+                        }
+    
+                        &:hover{
+                            background-color: $primary-variant !important;
+                        }
+                    }
+    
+                    &:hover{                
+                        & .option:not(:hover){
+                            background-color: $primary-color !important;
+                        }
+                    }
+                }
+            }
+            & .breadcrumb-list-grid{
+                & li{
+                    & a{
+                        color: rgba($white-color, 0.6);
+                        
+                        &.active{
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

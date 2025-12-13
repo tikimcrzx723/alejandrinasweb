@@ -1,0 +1,193 @@
+
+
+/*===== All Footer Style 3 =====*/
+
+
+.footer-style-3{
+    background-color: $white-variant;
+
+    & .footer-top{
+        & .footer-widget-subscribe{
+            margin-top: 32px;
+    
+            & p{
+                margin-top: 16px;
+                text-align: center !important;
+            }
+    
+            & .subscribe-form{
+                & .single-form{
+                    & .form-input{
+                        position: relative;
+    
+                        & .main-btn{
+                            width: 40px;
+                            height: 40px;
+                            line-height: 40px;
+                            color: $white-color;
+                            font-size: 24px;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            padding: 0;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .footer-follow{
+            padding-top: 24px;
+            
+            & li{
+                display: inline-block;
+                margin: 0 8px;
+
+                & a{
+                    font-size: 20px;
+                    color: $primary-color;
+
+                    @media #{$xs}{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-widget{
+        margin-top: 32px;
+
+        & .footer-title{
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: $dark-color;
+        }
+        & .footer-link{
+            padding-top: 12px;
+
+            & li{
+                padding: 4px 0;
+
+                & a{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: $dark-color;
+                    @include transition(0.3s);
+
+                    @media #{$md}{
+                        font-size: 14px;
+                    }
+
+                    &:hover{
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-copyright{
+        padding-top: 52px;
+
+        & p{
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            color: $dark-color;
+            @include transition(0.3s);
+
+            & a{
+                color: $dark-color;
+                @include transition(0.3s);
+
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== All Footer Style Dark 3 =====*/
+
+.footer-dark-style-3{
+    background-color: $dark-variant;
+
+    & .footer-top{
+        & .footer-widget-subscribe{    
+            & p{
+                color: $white-color;
+            }
+            & .subscribe-form{
+                & .single-form{
+                    & .form-input{
+                        & input{
+                            &:focus{
+                                border-color: $secondary-1-color ;
+                            }
+                        }
+                    }
+                }
+            }  
+        }
+
+        & .footer-follow{            
+            & li{
+                & a{
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    & .footer-widget{
+        & .footer-title{
+            color: rgba($white-color, 0.6);
+        }
+        & .footer-link{
+            & li{
+                & a{
+                    color: $white-color;
+
+                    &:hover{
+                        color: $secondary-1-color;
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-copyright{
+        & p{
+            color: $white-color;
+
+            & a{
+                color: $white-color;
+
+                &:hover{
+                    color: $secondary-1-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

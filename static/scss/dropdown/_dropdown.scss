@@ -1,0 +1,308 @@
+
+
+
+/*=====  All Dropdown  Style =====*/
+
+.dropdown{
+    & .main-btn{
+        text-transform: capitalize;
+        text-align: left;
+        
+        &::before{
+            display: none;
+        }
+        
+        & i{
+            float: right;
+            line-height: 35px;
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        &.toggle{
+            width: 40px;
+            padding: 0;
+            
+            & i{
+                float: none;
+                left: 7px;
+            }
+        }
+        
+        &.white-btn{
+            &:hover{
+                color: $primary-color;
+            }
+        }
+
+        // &:first-child{
+        //     border-top-right-radius: 0;
+        //     border-bottom-right-radius: 0;
+        // }
+    }
+    
+    & .dropdown-menu{
+        min-width: inherit;
+        width: 256px;
+        @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+        border: 0;
+        border-radius: 4px;
+        padding: 0;
+        margin-top: 0;
+        
+        & li{
+            position: relative;
+            
+            & a{
+                font-weight: 500;
+                font-size: 16px;
+                padding: 10px 16px;
+                display: block;
+                @include transition(0.4s);
+                
+                @media #{$md} {
+                    font-size: 14px;
+                }
+                @media #{$xs} {
+                    font-size: 14px;
+                }
+                
+                & i{
+                    float: right;
+                    font-size: 24px;
+                    line-height: 1;
+                    @include transition(0.4s);
+                    
+                    @media #{$md} {
+                        display: none;
+                    }
+                    @media #{$xs} {
+                        display: none;
+                    }
+                }
+                
+                & .sub-nav-toggler{
+                    display: none;
+
+                    @media #{$md} {
+                        display: block;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        background: none;
+                        font-size: 16px;
+                        border: 0;
+                        width: 41px;
+                        height: 41px;
+                    }
+                    @media #{$xs} {
+                        display: block;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        background: none;
+                        font-size: 16px;
+                        border: 0;
+                        width: 41px;
+                        height: 41px;
+                    }
+
+                    & span{
+                        width: 8px;
+                        height: 8px;
+                        border-left: 1px solid;
+                        border-bottom: 1px solid;
+                        @include transform(rotate(-45deg));
+                        position: relative;
+                        top: -5px;
+                    }
+                }
+            }
+
+            &:first-child{
+                & a{
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                }
+            }
+            &:last-child{
+                & a{
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+            }
+            
+            & .sub-menu{
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: 256px;
+                @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+                border: 0;
+                border-radius: 4px;
+                opacity: 0;
+                visibility: hidden;
+                @include transition(0.4s);
+                
+                @media #{$md} {
+                    position: relative;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    display: none;
+                    opacity: 1;
+                    visibility: visible;
+                    @include box-shadow (none);
+                    @include transition(0s);
+                    padding-left: 15px;
+                }
+                @media #{$xs} {
+                    position: relative;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    display: none;
+                    opacity: 1;
+                    visibility: visible;
+                    @include box-shadow (none);
+                    @include transition(0s);
+                    padding-left: 15px;
+                }
+                
+                & li{
+                    & a{
+                        
+                    }
+                }
+            }
+            
+            &:hover{
+                & > .sub-menu{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    
+    &.dropdown-white{
+        & .dropdown-menu{
+            background-color: $white-color;
+            
+            & li{
+                position: relative;
+
+                & a{
+                    color: $dark-color;
+                    
+                    & i{
+                        color: $primary-color;
+                    }
+                    
+                    & .sub-nav-toggler{
+
+                        @media #{$md} {
+                            color: $dark-color;
+                        }
+                        @media #{$xs} {
+                            color: $dark-color;
+                        }
+
+                        & span{
+                            border-color: $dark-color;
+                        }
+                    }
+                }
+                
+                &:hover{
+                    & > a{
+                        background-color: $primary-color;
+                        color: $white-color;
+
+                        & i{
+                            color: $white-color;
+                        }
+                        
+                        & .sub-nav-toggler{
+
+                            @media #{$md} {
+                                color: $white-color;
+                            }
+                            @media #{$xs} {
+                                color: $white-color;
+                            }
+
+                            & span{
+                                border-color: $white-color;
+                            }
+                        }
+                    }
+                }
+                & .sub-menu{
+                    background-color: $white-color;
+                    
+                    @media #{$md} {
+                        background-color: $white-variant;
+                    }
+                    @media #{$xs} {
+                        background-color: $white-variant;
+                    }
+                }
+            }
+        }
+    }
+    &.dropdown-primary{
+        & .dropdown-menu{
+            background-color: $primary-color;
+            
+            & li{
+                position: relative;
+
+                & a{
+                    color: $white-color;
+                    
+                    & i{
+                        color: $white-color;
+                    }
+                    
+                    & .sub-nav-toggler{
+
+                        @media #{$md} {
+                            color: $white-color;
+                        }
+                        @media #{$xs} {
+                            color: $white-color;
+                        }
+
+                        & span{
+                            border-color: $white-color;
+                        }
+                    }
+                }
+                
+                &:hover{
+                    & > a{
+                        background-color: $primary-variant;
+                        color: $white-color;
+
+                        & i{
+                            color: $white-color;
+                        }
+                    }
+                }
+                
+                & .sub-menu{
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

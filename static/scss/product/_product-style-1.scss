@@ -1,0 +1,135 @@
+
+
+/*===== All Product Style 1 =====*/
+
+
+
+.product-style-1{
+    & .product-image{
+        position: relative;
+
+        & .product-active{
+            & .product-item{
+                & img{
+                    width: 100%;
+                }
+            }         
+            & .slick-arrow{
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include transition(0.3s);
+                bottom: auto;
+                left: 4px;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                color: rgba($dark-color, 0.38);
+                font-size: 32px;
+                z-index: 5;
+                cursor: pointer;
+    
+                &:hover{
+                    color: $dark-color;
+                }
+                &.next{
+                    right: 4px;
+                    left: auto;
+                }
+            }   
+        }        
+
+        & .add-wishlist{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 24px;
+            color: rgba($dark-color, 64);
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            z-index: 9;
+            @include transition(0.3s);
+
+            &:hover{
+                color: $primary-color;
+            }
+        }
+    }
+
+    & .product-content{
+        background-color: rgba($dark-color, 0.64);
+        margin: -50px 42px 0;
+        position: relative;
+        z-index: 5;
+        padding: 30px 20px 35px;
+
+        @media #{$lg}{
+            margin: -50px 32px 0;
+            padding: 20px 15px 25px;
+        }
+        @media #{$md}{
+            margin: -50px 32px 0;
+            padding: 20px 15px 25px;
+        }
+        @media #{$xs}{
+            margin: -50px 22px 0;
+            padding: 20px 10px 25px;
+        }
+
+        & .title{
+            & a{
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 30px;
+                color: $white-color;
+                @include transition(0.3s);
+
+                @media #{$lg}{
+                    font-size: 20px;
+                }
+                @media #{$md}{
+                    font-size: 20px;
+                }
+                @media #{$xs}{
+                    font-size: 18px;
+                }
+
+                &:hover{
+                    color: $secondary-1-color;
+                }
+            }
+        }
+        & p{
+            color: rgba($white-color, 0.74);
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+            margin-top: 8px;
+        }
+        & .main-btn{
+            margin-top: 16px;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: capitalize;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

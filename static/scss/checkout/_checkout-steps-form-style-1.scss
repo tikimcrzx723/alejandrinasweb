@@ -1,0 +1,281 @@
+
+
+
+/*=====  Checkout Form Style 1 =====*/
+
+
+.checkout-steps-form-style-1{
+    & ul{
+        & li{
+            border-radius: 8px;
+            
+            & + li{
+                margin-top: 12px;
+            }
+        }
+        & .vjopt_activeli{
+            box-shadow: 2px 2px 8px rgba($dark-color, 0.32);
+            border-radius: 8px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -ms-border-radius: 8px;
+            -o-border-radius: 8px;
+
+            & .title{
+                color: $dark-color;
+
+                &::before{
+                    content: '\F0143';
+                }
+            }
+        }
+    }
+
+    & .title{
+        font-size: 16px;
+        font-weight: 500;
+        color: $dark-light;
+        line-height: 40px;
+        padding: 0 16px;
+        position: relative;
+
+        &::before{
+            position: absolute;
+            content: "\F0140";
+            top: 50%;
+            right: 16px;
+            @include transform(translateY(-50%));
+            font-family: "Material Design Icons";
+            font-size: 24px;
+            color: $dark-light;
+            @include transition(0.3s);
+        }
+    }
+
+    & .checkout-steps-form-content{
+        padding: 16px;
+        padding-top: 0;
+        border-top: 1px solid $white-light;
+
+        & .select-elements{
+            & .select-items {
+                position: relative;
+                
+                & .nice-select {        
+                    & .list {
+                        width: 100%;
+        
+                        & .option {     
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .steps-form-btn{
+            padding-top: 4px;
+
+            & .main-btn{
+                margin-top: 12px;
+            }
+        }
+
+        & .checkout-payment-option{
+            margin-top: 16px;
+
+            & .payment-title{}
+
+            & .payment-option-wrapper{
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                -moz-flex-wrap: wrap;
+                flex-wrap: wrap;
+                margin-left: -4px;
+                margin-right: -4px;
+
+                & .single-payment-option{
+                    width: 25%;
+                    margin-top: 16px;
+                    padding: 0 4px;
+
+                    @media #{$xs}{
+                        width: 50%;
+                    }
+                    @media #{$sm}{
+                        width: 25%;
+                    }
+
+                    & input[type="radio"]{
+                        display: none;
+
+                        & + label{
+                            border: 1px solid $white-light;
+                        }
+
+                        &:checked{
+                            & + label{
+                                border: 1px solid $primary-color;
+                            }
+                        }
+                    }
+                    & label{
+                        text-align: center;
+                        padding: 12px;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        margin-bottom: 0;
+                        width: 100%;
+                        @include transition(0.3s);
+                        cursor: pointer;
+
+                        @media #{$xs}{
+                            padding: 8px;
+                        }
+                        
+                        & img{}
+                        & p{
+                            font-size: 14px;
+                            font-weight: 300;
+                            color: $dark-color;
+                            margin-top: 12px;
+
+                            @media #{$xs}{
+                                font-size: 12px;
+                            }
+                        }
+                        & .price{
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 22px;
+                            color: $dark-color;
+                            margin-top: 4px;
+
+                            @media #{$xs}{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+/*=====  Checkout Form Dark Style 1 =====*/
+
+.checkout-steps-form-dark-style-1{
+    & ul{
+        & li{
+            background-color: $secondary-3-variant;
+        }
+        & .vjopt_activeli{
+            & .title{
+                color: $white-color;
+            }
+        }
+    }
+
+    & .title{
+        color: rgba($white-color, 0.6);
+
+        &::before{
+            color: rgba($white-color, 0.6);
+        }
+    }
+
+    & .checkout-steps-form-content{
+        border-top: 1px solid rgba($white-color, 0.38);
+
+        & .select-elements{
+            & label{
+                color: $white-color;
+            }
+
+            & .select-items {
+                position: relative;
+                
+                & .nice-select {    
+                    background-color: rgba($white-color, 0.2);
+
+                    & .list {
+                        width: 100%;
+        
+                        & .option {     
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .single-checkbox {
+            & input[type="checkbox"] {
+                & + label {
+                    & span {
+                        border-color: $secondary-1-color;
+    
+                        &::before {
+                            background-color: $secondary-1-color;
+                        }
+                    }
+                }
+            }
+            & p{
+                 color: $white-color;
+            }
+        }
+
+        & .checkout-payment-option{
+            & .payment-title{
+                color: $white-color;
+            }
+
+            & .payment-option-wrapper{
+                & .single-payment-option{
+                    & input[type="radio"]{
+                        & + label{
+                            border: 1px solid rgba($white-color, 0.38);
+                        }
+
+                        &:checked{
+                            & + label{
+                                border: 1px solid $secondary-2-color;
+                            }
+                        }
+                    }
+                    & label{                        
+                        & img{}
+                        & p{
+                            color: $white-color;
+                        }
+                        & .price{
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+

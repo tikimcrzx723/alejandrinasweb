@@ -1,0 +1,84 @@
+// team-section css
+
+.team-section {
+
+  .single-team-wrapper {
+    position: relative;
+    z-index: 11;
+    overflow: hidden;
+
+    &:hover {
+
+      .team-content {
+        opacity: 1;
+        visibility: visible;
+
+        .team-social,
+        .team-info {
+          @include transform(translateX(0));
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+
+    .team-img {
+      img {
+        width: 100%;
+      }
+    }
+
+    .team-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($primary-color, .6);
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 30px 20px;
+      @include transition(.3s);
+      opacity: 0;
+      visibility: hidden;
+
+      .team-info {
+        @include transition(.3s);
+        @include transform(translateX(-50%));
+        opacity: 0;
+        visibility: hidden;
+
+        h5 {
+          color: $white-color;
+        }
+
+        p {
+          color: $gray-4;
+        }
+      }
+
+      .team-social {
+        display: flex;
+        @include transition(.3s);
+        @include transform(translateX(50%));
+        opacity: 0;
+        visibility: hidden;
+
+
+        li {
+          margin: 5px;
+
+          a {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

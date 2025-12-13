@@ -1,0 +1,101 @@
+// Font Family
+$font-1: 'Rubik', sans-serif;
+
+
+
+// ===========================
+//        Colors css
+// ===========================
+
+
+// white Color
+$white-color: #fff;
+$white-variant: #FAFAFA;
+$white-light: #F2F2F2;
+
+
+// Dark Color
+$dark-color: #000;
+$dark-variant: #4C4C4C;
+$dark-light: #7D7D7D;
+
+
+// Gray Color
+$gray-1: #828282;
+$gray-2: #BDBDBD;
+$gray-3: #D1D1D1;
+$gray-4: #EFEFEF;
+
+
+// primary Shades Color
+$primary-shades-1 : #0009D1;
+$primary-shades-2 : #001AD8;
+$primary-shades-3 : #4529E7;
+$primary-shades-4 : #754FF1;
+$primary-shades-5 : #9270F3;
+$primary-shades-6 : #B39BF6;
+$primary-shades-7 : #D2C3F9;
+
+
+
+
+// primary Color
+$primary-color : #542DED;
+$primary-variant : #2A21DE;
+$primary-light : #EEE6FD;
+
+
+// Secondary 1 Color
+$secondary-1-color : #E14C7B;
+$secondary-1-variant : #B62F5C;
+$secondary-1-light : #FAE5EC;
+
+
+// Secondary 2  Color
+$secondary-2-color : #00D4E0;
+$secondary-2-variant : #00ACB2;
+$secondary-2-light :  #DFFAFA;
+
+
+// Secondary 3  Color
+$secondary-3-color : #393D8E;
+$secondary-3-variant : #161359;
+$secondary-3-light :  #E6E7F1;
+
+
+// Success Color
+$success-color : #7CB637;
+$success-variant : #548E24;
+$success-light : #F1F8E8;
+
+
+// Info Color
+$info-color : #00C2FE;
+$info-variant : #0097EF;
+$info-light : #D8F5FF;
+
+
+// Caution Color
+$caution-color : #FFBE27;
+$caution-variant : #F97C14;
+$caution-light : #FFFDE6;
+
+
+// Error  Color
+$error-color : #FF4B22;
+$error-variant : #CA2D0E;
+$error-light : #FBE8E7;
+
+
+
+// Rating color
+$rating: #FFBE27;
+
+
+// Responsive Variables
+$desktop: 'only screen and (min-width: 1400px)';
+$laptop: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$xs:'(max-width: 767px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';

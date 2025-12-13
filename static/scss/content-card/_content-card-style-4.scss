@@ -1,0 +1,65 @@
+
+
+/*===== All Content Card Style 4 =====*/
+
+.content-card-style-4{ 
+    background-color: $white-variant;
+
+    & .single-content{
+        & .content-icon{
+            & i{
+                font-size: 72px;
+                line-height: 72px;
+                color: $secondary-3-color;
+            }
+        }
+        & .content-content{
+            & .title{
+                & a{
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 30px;
+                    color: $dark-color;
+
+                    @media #{$xs}{
+                        font-size: 20px;
+                    }
+                }
+            }
+            & p{
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 22px;
+                color: $dark-color;
+                margin-top: 16px;
+            }
+            & .more{
+                color: $primary-color;
+                text-transform: uppercase;
+                margin-top: 32px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }   
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,184 @@
+
+
+/*=====   Filter Style 2 Style =====*/
+
+
+.filter-style-7{
+    padding: 16px;
+    border-radius: 8px;
+    @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+    margin-top: 16px;
+
+    & .filter-title{
+        & .title{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 40px;
+            color: $dark-color;
+            display: block;
+            position: relative;
+
+            &::before{
+                position: absolute;
+                content: "\F0143";
+                font-family: "Material Design Icons";
+                top: 50%;
+                @include transform(translateY(-50%));
+                right: 0;
+                font-size: 24px;
+                color: $primary-color;
+            }
+
+            &.collapsed{
+                &::before{
+                    content: "\F0140";
+                }
+            }
+        }
+    }
+    
+    & .filter-color{
+        padding-top: 8px;
+
+        & ul{
+            & li{}
+        }
+
+        & .color-check{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex; 
+            -webkit-box-pack: space-between;
+            -ms-flex-pack: space-between;
+            justify-content: space-between;    
+            margin-top: 8px;
+            
+            & p{
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex; 
+                
+                & span{
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    margin-right: 11px;
+                }
+
+                & strong{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: $dark-color;
+                }
+            }
+
+            & input[type="checkbox"] {
+                display: none;
+        
+                & + label {
+                    & span {
+                        width: 17px;
+                        height: 17px;
+                        border: 2px solid rgba($dark-color, 0.64);
+                        border-radius: 4px;
+                        cursor: pointer;
+                        position: relative;
+                        display: inline-block;
+                        margin: 0 5px -3px 0;
+                        @include transition(0.4s);
+        
+                        &::before {
+                            position: absolute;
+                            content: '\F012C';
+                            font-family: "Material Design Icons";
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            top: 0;
+                            left: -1px;
+                            width: 100%;
+                            height: 100%;
+                            @include transition(0.4s);
+                            line-height: 0.8;
+                            font-size: 16px;
+                            color: $white-color;
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+                    }
+                }
+        
+                &:checked {
+                    & + label {
+                        & span {
+                            background-color: $primary-color;
+                            border-color: $primary-color;
+
+                            &::before {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.filter-dark{
+        background-color: $secondary-3-variant;
+
+        & .filter-title{
+            & .title{
+                color: $white-color;
+    
+                &::before{
+                    color: $secondary-1-color;
+                }
+            }
+        }
+
+        & .filter-color{    
+            & .color-check{
+                & p{
+                    & strong{
+                        color: $white-color;
+                    }
+                }
+    
+                & input[type="checkbox"] {            
+                    & + label {
+                        & span {
+                            border: 2px solid rgba($white-color, 0.64);
+                        }
+                    }
+            
+                    &:checked {
+                        & + label {
+                            & span {
+                                background-color: $secondary-1-color;
+                                border-color: $secondary-1-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

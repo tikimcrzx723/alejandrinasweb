@@ -1,0 +1,197 @@
+/*=====  Login Registration  Style 2 =====*/
+
+.login-registration-style-2 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 55px 30px 60px;
+  border-radius: 10px;
+  @include box-shadow(2px 2px 8px rgba($dark-color, 0.32));
+
+  @media #{$xs} {
+    padding: 30px 20px;
+  }
+  @media #{$sm} {
+    padding: 55px 30px 60px;
+  }
+
+  & .title {
+  }
+
+  & ul {
+    padding-top: 20px;
+
+    & li {
+      display: inline-block;
+
+      & + li {
+        margin-left: 4px;
+      }
+
+      & a {
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 4px;
+        line-height: 40px;
+        color: $white-color;
+        margin-top: 10px;
+        text-align: center;
+
+        &.facebook-login-registration {
+          background-color: #3c5898;
+        }
+
+        &.google-login-registration {
+          background-color: $white-color;
+          color: $dark-color;
+          @include box-shadow(2px 2px 8px rgba($dark-color, 0.25));
+        }
+      }
+    }
+  }
+
+  & .account {
+    color: $dark-color;
+    font-weight: 300;
+    padding-right: 10px;
+  }
+
+  & .single-form {
+    & .form-input {
+      & [type="password"] {
+        padding-right: 40px;
+      }
+
+      & span {
+        position: absolute;
+        top: 1px;
+        right: 10px;
+        font-size: 24px;
+        color: $dark-light;
+      }
+      & .main-btn {
+        margin-top: 10px;
+      }
+
+      &.form {
+        & textarea,
+        & input {
+          @media #{$xs} {
+            margin-top: 16px;
+          }
+          @media #{$sm} {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  & .login-checkbox-forget {
+    & .forget {
+      font-size: 16px;
+      font-weight: 500;
+      color: $primary-color;
+      line-height: 16px;
+      margin-top: 16px;
+    }
+  }
+
+  & .login {
+    color: $dark-color;
+    margin-top: 30px;
+    font-weight: 300;
+
+    @media #{$xs} {
+      font-size: 14px;
+    }
+    @media #{$sm} {
+      font-size: 16px;
+    }
+
+    & a {
+      text-transform: uppercase;
+      color: $primary-color;
+      font-weight: 700;
+      margin-left: 20px;
+
+      @media #{$xs} {
+        margin-left: 10px;
+      }
+      @media #{$sm} {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &.registration {
+    max-width: 100%;
+  }
+}
+
+/*=====  Login Registration Dark  Style 2 =====*/
+
+.login-registration-dark-style-2 {
+  background-color: $secondary-3-variant;
+
+  & .title {
+    color: $white-color;
+  }
+
+  & .account {
+    color: $white-color;
+    font-weight: 300;
+    padding-right: 10px;
+  }
+
+  & .single-form {
+    & .form-input {
+      & [type="password"] {
+      }
+
+      & span {
+        color: $secondary-1-color;
+      }
+    }
+  }
+
+  & .single-checkbox {
+    & input[type="checkbox"] {
+      & + label {
+        & span {
+          border-color: $secondary-1-color;
+
+          &::before {
+            background-color: $secondary-1-color;
+          }
+        }
+      }
+    }
+    & p {
+      color: $white-color;
+    }
+  }
+
+  & .login-checkbox-forget {
+    & .forget {
+      color: $secondary-1-color;
+    }
+  }
+
+  & .login {
+    color: $white-color;
+    margin-top: 30px;
+    font-weight: 300;
+
+    & a {
+      text-transform: uppercase;
+      color: $secondary-1-color;
+      font-weight: 700;
+      margin-left: 20px;
+    }
+  }
+
+  &.registration {
+  }
+}

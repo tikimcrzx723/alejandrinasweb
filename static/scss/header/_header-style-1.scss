@@ -1,0 +1,246 @@
+
+
+/*===== All Header Style 1 =====*/
+
+
+.header-style-1{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+
+    @media #{$xs}{
+        display: block;
+    }
+
+    & .header-big{
+        width: 66.67%;
+
+        @media #{$xs}{
+            width: 100%;
+        }
+       
+        & .single-header-item{
+            position: relative;
+            height: 760px;
+
+            // @media #{$desktop}{
+            //     height: 960px;
+            // }
+            @media #{$laptop} {
+                height: 660px;
+            }
+
+            @media #{$lg}{
+                height: 660px;
+            }
+            @media #{$md}{
+                height: 600px;
+            }
+            @media #{$xs}{
+                height: 460px;
+            }
+            
+            & .header-item-content{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 70%;
+                padding: 40px;
+                background-color: rgba($white-color, 0.74);
+
+                @media #{$md}{
+                    padding: 25px;
+                }
+                @media #{$xs}{
+                    padding: 15px;
+                    width: 80%;
+                }
+                @media #{$sm}{
+                    width: 70%;
+                }
+
+                & .title{
+                    font-weight: 300;
+                    font-size: 44px;
+                    line-height: 55px;
+                    color: $dark-color;
+
+                    @media #{$lg}{
+                        font-size: 30px;
+                        line-height: 42px;
+                    }
+                    @media #{$md}{
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
+                    @media #{$xs}{
+                        font-size: 18px;
+                        line-height: 28px;
+                    }
+                    @media #{$sm}{
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
+                }
+                & .link{
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $primary-color;
+                    margin-top: 24px;
+
+                    @media #{$xs}{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        & .header-items-active{
+            & .slick-dots{
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                @include transform(translateY(-50%));
+                z-index: 9;
+    
+                & li{    
+                    & button{
+                        background: rgba($dark-color, 0.38);
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        font-size: 0;
+                        border: 0;
+                        @include transition(0.3s);
+                    }
+    
+                    &.slick-active{
+                        & button{
+                            background-color: $primary-color;
+                            @include transform(scale(2));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .header-min{
+        width: 33.33%;
+
+        @media #{$xs}{
+            width: 100%;
+        }
+        @media #{$sm}{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        & .header-min-item{            
+            height: 380px;
+
+            // @media #{$desktop}{
+            //     height: 480px; 
+            // }
+            @media #{$laptop} {
+                height: 330px;
+            }
+            @media #{$lg}{
+                height: 330px;
+            }
+            @media #{$md}{
+                height: 300px;
+            }
+            @media #{$sm}{
+                width: 50%;
+            }
+
+            & .product-content{        
+                @media #{$lg}{
+                    width: 70%;
+                }               
+                @media #{$sm}{
+                    width: 70%;
+                }        
+            }
+        }
+    }
+}
+
+
+/*===== All Header Style =====*/
+
+.header-style-dark-1{
+    & .header-big{
+        & .single-header-item{
+            & .header-item-content{
+                background-color: rgba($dark-color, 0.74);
+
+                & .title{
+                    color: $white-color;
+                }
+                & .link{
+                    color: $secondary-2-color;
+                }
+            }
+        }
+
+        & .header-items-active{
+            & .slick-dots{    
+                & li{    
+                    &.slick-active{
+                        & button{
+                            background-color: $secondary-2-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .header-min{
+        & .product-style-25{
+
+            & .product-content{        
+                background-color: rgba($dark-color, 0.74);     
+
+                & .title{
+                    & a{
+                        color: $white-color;
+                    }
+                }
+                & p{
+                    color: rgba($white-color, 0.74);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

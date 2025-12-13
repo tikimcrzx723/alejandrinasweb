@@ -1,0 +1,568 @@
+
+
+/*===== Product Details Style 1 =====*/
+
+
+.product-details-wrapper{
+    background-color: $white-variant;
+}
+
+
+
+.product-details-style-1{
+
+    & .product-details-content{
+        & .sub-title{
+            font-size: 24px;
+            line-height: 30px;
+            color: rgba($dark-color, 0.64);
+
+            @media #{$lg}{
+                font-size: 20px;
+            }
+            @media #{$xs}{
+                font-size: 18px;
+            }
+            @media #{$sm}{
+                font-size: 20px;
+            }
+            
+        }
+        & .title{
+            font-weight: 500;
+            font-size: 52px;
+            line-height: 65px;
+            color: $dark-color;
+
+            @media #{$lg}{
+                font-size: 38px;
+                line-height: 36px;
+            }
+            @media #{$xs}{
+                font-size: 32px;
+                line-height: 36px;
+            }
+            @media #{$sm}{
+                font-size: 38px;
+                line-height: 45px;
+            }
+        }
+
+       
+
+        & .product-items{
+            margin-top: 32px;
+
+            & .item-title{
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+                color: $dark-color;
+
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+            }
+            & .items-wrapper{
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+
+                & .single-item{
+                    max-width: 130px;
+                    text-align: center;
+                    -webkit-flex: 1;
+                    -moz-flex: 1;
+                    -ms-flex: 1;
+                    flex: 1;
+                    margin-top: 8px;
+
+                    @media #{$lg}{
+                        max-width: 110px;
+                    }
+
+                    & + .single-item{
+                        margin-left: 8px;
+                    }
+
+                    & .items-image{
+                        & img{
+                            width: 100%;
+                            border-radius: 8px;
+                            @include box-shadow (0px 2px 4px rgba($dark-color, 0.08));
+                            border: 1px solid $white-color;
+                            cursor: pointer;
+                            @include transition(0.3s);
+                        }
+                    }
+
+                    & .text{
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 16px;
+                        color: $dark-color;
+                        margin-top: 11px;
+                    }
+
+                    &.active{
+                        & .items-image{
+                            & img{
+                                @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+                                border-color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & .product-select-wrapper{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            margin-left: -10px;
+            margin-right: -10px;
+            
+            & .select-title{
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 400;
+                color: $dark-color;
+
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+                @media #{$sm}{
+                    font-size: 16px;
+                }
+
+                & span{
+                    font-weight: 500;
+                    margin-left: 5px;
+                }
+            }
+            & .select-item{
+                padding-top: 20px;
+                padding-left: 10px;
+                padding-right: 10x;
+
+                & .color-select{
+                    padding-top: 8px;
+
+                    & li{
+                        & + li{
+                            margin-left: 8px;
+                        }
+
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 1px solid $white-color;
+                        cursor: pointer;
+                        @include transition(0.3s);
+
+                        @media #{$lg}{
+                            width: 30px;
+                            height: 30px;
+                        }
+                        @media #{$xs}{
+                            width: 25px;
+                            height: 25px;
+                        }
+                        @media #{$sm}{
+                            width: 30px;
+                            height: 30px;
+                        }
+
+                        &.active{
+                            border-color: $primary-color;
+                            @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+                        }
+                    }
+                }
+
+                & .size-select{
+                    margin-top: 8px;
+
+                    & .nice-select{
+                        border: 1px solid $gray-4;
+                        background-color: transparent;
+                        width: 160px;
+                        float: none;
+                        height: 40px;
+                        line-height: 38px;
+
+                        @media #{$xs}{
+                            width: 120px;
+                            height: 30px;
+                            line-height: 28px;
+                        }
+                        @media #{$sm}{
+                            width: 120px;
+                            height: 35px;
+                            line-height: 33px;
+                        }
+            
+                        &:focus{
+                            border-color: $primary-color;
+                        }
+            
+                        &::after{
+                            border-color: $primary-color;
+                            width: 8px;
+                            height: 8px;
+                        }
+            
+                        & .current{
+                            color: $dark-color;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 22px;
+                            line-height: 38px;
+
+                            @media #{$xs}{
+                                font-size: 14px;
+                                line-height: 28px;
+                            }
+                            @media #{$sm}{
+                                font-size: 16px;
+                                line-height: 33px;
+                            }
+                        }
+                        
+                        & .list{
+                            width: 100%;
+                            
+                            & .option {
+                                background-color: $white-variant;
+                                color: $dark-color;
+            
+                                &.selected {
+                                    background-color: $gray-4;
+                                }
+            
+                                &:hover{
+                                    background-color: $gray-4 !important;
+                                }
+                            }
+            
+                            &:hover{                
+                                & .option:not(:hover){
+                                    background-color: $white-variant !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .select-quantity{
+                    overflow: hidden;
+                    border-radius: 4px;
+                    background-color: transparent;
+                    border: 1px solid $gray-4;
+                    display: inline-block;
+                    margin-top: 8px;
+
+                    & button{
+                        width: 38px;
+                        height: 38px;
+                        padding: 0;
+                        font-size: 24px;
+                        border: 0;
+                        background-color: transparent;
+                        @include transition(0.4s);
+                        color: $dark-light;
+                        padding: 0;
+
+                        @media #{$xs}{
+                            height: 28px;
+                            width: 28px;
+                        }
+                        @media #{$sm}{
+                            height: 34px;
+                            width: 34px;
+                        }
+
+                        &:hover{
+                            color: $primary-color;
+                        }
+                    }
+                    & input{
+                        width: 50px;
+                        height: 38px;
+                        border: 0;
+                        padding: 0 10px;
+                        text-align: center;
+                        font-weight: 700;
+                        background-color: transparent;
+                        color: $dark-color;
+
+                        @media #{$xs}{
+                            height: 40px;
+                            width: 28px;
+                            font-size: 14px;
+                        }
+                        @media #{$sm}{
+                            height: 35px;
+                            width: 45px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                & .country-select{
+                    margin-top: 8px;
+
+                    & .nice-select{
+                        border: 1px solid $gray-4;
+                        background-color: transparent;
+                        width: 350px;
+                        float: none;
+                        height: 40px;
+                        line-height: 38px;
+
+                        @media #{$xs}{
+                            width: 280px;
+                            height: 30px;
+                            line-height: 28px;
+                        }
+                        @media #{$sm}{
+                            width: 280px;
+                            height: 35px;
+                            line-height: 33px;
+                        }
+            
+                        &:focus{
+                            border-color: $primary-color;
+                        }
+            
+                        &::after{
+                            border-color: $primary-color;
+                            width: 8px;
+                            height: 8px;
+                        }
+            
+                        & .current{
+                            color: $dark-color;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 38px;
+
+                            @media #{$xs}{
+                                line-height: 28px;
+                                font-size: 14px;
+                            }
+                            @media #{$sm}{
+                                line-height: 33px;
+                                font-size: 16px;
+                            }
+                        }
+                        
+                        & .list{
+                            width: 100%;
+                            
+                            & .option {
+                                background-color: $white-variant;
+                                color: $dark-color;
+            
+                                &.selected {
+                                    background-color: $gray-4;
+                                }
+            
+                                &:hover{
+                                    background-color: $gray-4 !important;
+                                }
+                            }
+            
+                            &:hover{                
+                                & .option:not(:hover){
+                                    background-color: $white-variant !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & .product-price{
+            padding-top: 24px;
+
+            & .price-title{
+                font-size: 16px;
+                line-height: 22px;
+                color: $dark-color;
+                font-weight: 400;
+
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+            }
+            & .sale-price{
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 45px;
+                color: $dark-color;
+                margin-top: 8px;
+                display: inline-block;
+                margin-right: 16px;
+
+                @media #{$lg}{
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+                @media #{$xs}{
+                    font-size: 28px;
+                    line-height: 38px;
+                }
+                
+            }
+            & .regular-price{
+                font-weight: 700;
+                font-size: 28px;
+                line-height: 38px;
+                color: $dark-light;
+                margin-top: 8px;
+                text-decoration: line-through;
+                text-decoration-thickness: 3px;
+                display: inline-block;
+
+                @media #{$lg}{
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+                @media #{$xs}{
+                    font-size: 20px;
+                    line-height: 34px;
+                }
+            }
+        }
+
+        & .product-btn{
+            padding-top: 24px;
+
+            & .main-btn{
+                margin-top: 8px;
+                margin-right: 6px;
+            }
+        }
+    }
+
+    & .product-details-image{
+        position: relative;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        & .product-image{
+            width: 85%;
+
+            @media #{$lg}{
+                width: 83%;
+            }
+            @media #{$xs}{
+                width: 83%;
+            }
+            @media #{$sm}{
+                width: 85%;
+            }
+
+            & .single-image{
+                & img{
+                    width: 100%;
+                }
+            }
+        }
+
+        & .product-thumb-image{
+            width: 15%;
+            text-align: center;
+
+            @media #{$lg}{
+                width: 17%;
+            }
+            @media #{$xs}{
+                width: 17%;
+            }
+            @media #{$sm}{
+                width: 15%;
+            }
+
+            & .single-thumb{
+                cursor: pointer;
+                border-radius: 4px;
+                margin: 5px 10px;    
+                
+                @media #{$xs}{
+                    margin: 3px;
+                }
+
+                & img{
+                    width: 60px;                    
+                    border-radius: 4px;
+                    opacity: 0.74;
+                    @include transition(0.3s);
+
+                    @media #{$xs}{
+                        width: 40px;
+                    }
+                    @media #{$sm}{
+                        width: 60px;
+                    }
+                }
+                &.slick-current{
+                    & img{
+                        @include box-shadow ( 2px 2px 8px rgba($dark-color, 0.32));
+                        opacity: 1;
+                    }
+                }
+            }
+
+            & .slick-arrow{
+                font-size: 32px;
+                color: $dark-light;
+                cursor: pointer;        
+                
+                @media #{$xs}{
+                    font-size: 24px;
+                    line-height: 20px;
+                }
+                @media #{$sm}{
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

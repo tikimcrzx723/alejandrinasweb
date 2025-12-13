@@ -1,0 +1,218 @@
+
+
+
+
+/*=====  Login Registration  Style 1 =====*/
+
+
+.login-registration-style-1 {
+    max-width: 350px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 55px 25px 60px;
+    border-radius: 10px;
+    @include box-shadow (2px 2px 8px rgba($dark-color, 0.32));
+    
+    @media #{$xs}{
+        padding: 30px 20px;
+    }
+    @media #{$sm}{
+       padding: 55px 30px 60px;
+    }
+
+    & .title {}
+
+    & ul {
+        padding-top: 20px;
+
+        & li {
+            & a {
+                display: block;
+                height: 40px;
+                width: 100%;
+                border-radius: 4px;
+                line-height: 40px;
+                color: $white-color;
+                margin-top: 10px;
+                padding: 0 15px;
+                text-align: center;
+
+                &.facebook-login-registration {
+                    background-color: #3C5898;
+                }
+
+                &.google-login-registration {
+                    background-color: $white-color;
+                    color: $dark-color;
+                    @include box-shadow (2px 2px 8px rgba($dark-color, 0.25));
+                }
+
+                & img,
+                & i {
+                    float: left;
+                    line-height: 40px;
+                }
+                & img{
+                    position: relative;
+                    left: -11px;
+                }
+            }
+        }
+    }
+
+    & .account {
+        color: $dark-color;
+        font-weight: 300;
+        padding-top: 28px;
+    }
+
+    & .single-form {
+        
+        & .forget{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 12px;
+            font-weight: 500;
+            color: $primary-color;
+            line-height: 16px;
+            margin-top: 6px;
+        }
+        
+        & .form-input {
+            & [type="password"]{
+                padding-right: 40px;
+            }
+
+            & span {
+                position: absolute;
+                top: 1px;
+                right: 10px;
+                font-size: 24px;
+                color: $dark-light;
+            }
+            & .main-btn{
+                margin-top: 10px;
+            }
+            
+            &.form{
+                & textarea,
+                & input{                    
+                    @media #{$xs}{
+                        margin-top: 16px;
+                    }
+                    @media #{$sm}{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    & .login{
+        color: $dark-color;
+        margin-top: 30px;
+        font-weight: 300;
+        
+        @media #{$xs}{
+            font-size: 14px;
+        }
+        @media #{$sm}{
+            font-size: 16px;
+        }
+        
+        & a{
+            text-transform: uppercase;
+            color: $primary-color;
+            font-weight: 700;
+            margin-left: 20px;
+            
+            @media #{$xs}{
+                margin-left: 10px;
+            }
+            @media #{$sm}{
+                margin-left: 20px;
+            }
+        }
+    }
+    
+    &.registration{
+        max-width: 100%;
+    }
+}
+
+
+/*=====  Login Registration Dark  Style 1 =====*/
+
+
+.login-registration-dark-style-1 {
+    background-color: $secondary-3-variant;
+
+    & .title {
+        color: $white-color;
+    }
+
+    & ul {
+        padding-top: 20px;
+
+        & li {
+            & a {
+                &.facebook-login-registration {}
+
+                &.google-login-registration {}
+
+                & i {}
+            }
+        }
+    }
+
+    & .account {
+        color: $white-color;
+    }
+
+    & .single-form {
+        & .forget{
+            color: $white-color;
+        }
+        & .form-input {
+            & span {
+                color: $secondary-1-color;
+            }
+        }
+    }
+    
+    & .single-checkbox {
+        & input[type="checkbox"] {
+            & + label {
+                & span {
+                    border-color: $secondary-1-color;
+
+                    &::before {
+                        background-color: $secondary-1-color;
+                    }
+                }
+            }
+        }
+        & p{
+             color: $white-color;
+        }
+    }
+    
+    & .login{
+        color: $white-color;
+        
+        & a{
+            text-transform: uppercase;
+            color: $secondary-1-color;
+            font-weight: 700;
+            margin-left: 20px;
+        }
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,144 @@
+
+
+/*===== All Content Card Style 1 =====*/
+
+.content-card-style-1{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: #eee;
+    position: relative;
+
+    @media #{$laptop}{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    @media #{$lg}{
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+    @media #{$md}{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @media #{$xs}{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    & .content-card-image{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-size: contain;
+
+        @media #{$xs}{
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+    }
+    & .content-card-image-2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-size: contain;
+
+        @media #{$xs}{
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+    }
+
+    & .content-card-content{
+        & .sub-title{
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 30px;
+            color: rgba($dark-color, 64);
+
+            @media #{$lg}{
+                font-size: 20px;
+                line-height: 26px;
+            }
+            @media #{$md}{
+                font-size: 18px;
+                line-height: 24px;
+            }
+            @media #{$xs}{
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+        & .main-title{
+            font-weight: 500;
+            font-size: 52px;
+            line-height: 65px;
+            color: $dark-color;
+            margin-top: 16px;
+
+            @media #{$lg}{
+                font-size: 40px;
+                line-height: 55px;
+            }
+            @media #{$md}{
+                font-size: 30px;
+                line-height: 40px;
+            }
+            @media #{$xs}{
+                font-size: 28px;
+                line-height: 28px;
+            }
+            @media #{$sm}{
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+        & p{
+            font-size: 24px;
+            line-height: 30px;
+            color: rgba($dark-color, 64);
+            font-weight: 400;
+            margin-top: 24px;
+
+            @media #{$lg}{
+                font-size: 20px;
+                line-height: 26px;
+            }
+            @media #{$md}{
+                font-size: 16px;
+                line-height: 22px;
+            }
+            @media #{$xs}{
+                font-size: 14px;
+                line-height: 20px;
+            }
+            @media #{$sm}{
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

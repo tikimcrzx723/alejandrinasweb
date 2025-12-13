@@ -1,0 +1,477 @@
+
+
+
+/*=====  Checkout Style 1 =====*/
+
+
+.checkout-style-1{
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.32);
+    border-radius: 8px;
+    
+    & .checkout-table{
+        & .table{
+            margin-bottom: 0;
+            
+            & thead{
+                & tr{
+                    & th{
+                        padding: 9px 16px;
+                        border: 0;
+                        border-bottom: 1px solid $white-light;
+                        font-size: 14px;
+                        font-weight: 300;
+                        color: $dark-light;
+                        
+                        &.product{
+                            min-width: 240px;
+                        }
+                        &.size{
+                            min-width: 80px;
+                            width: 80px;
+                        }
+                        &.quantity{
+                            width: 100px;
+                        }
+                        &.price{
+                            min-width: 80px;
+                            width: 80px;
+                        }
+                        &.action{
+                            min-width: 100px;
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+            & tbody{
+                & tr{
+                    & td{
+                        border: 0;
+                        border-bottom: 1px solid $white-light;
+                        padding: 16px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        
+        & .product-cart{
+            & .product-thumb{
+                & img{}
+            }
+            & .product-content{
+                padding-left: 8px;
+
+                & .title{
+                    & a{
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: $dark-color;
+                        @include transition(0.3s);
+
+                        &:hover{
+                            color: $primary-color;
+                        }
+                    }
+                }
+                & span{
+                    font-weight: 300;
+                    font-size: 13px;
+                    line-height: 16px;
+                    margin-top: 4px;
+                    color: $dark-light;
+                }
+            }
+        }
+
+        & .product-size{
+            position: relative;
+
+            & .nice-select {
+                width: 70px;
+                border: 1px solid $white-light;
+                height: 35px;
+                line-height: 33px;
+                background-color: transparent;
+                padding: 0 10px;
+                float: none;
+                border-radius: 4px;
+
+
+                &:focus {}
+
+                &::after {
+                    width: 9px;
+                    height: 9px;
+                    right: 10px;
+                    border-color: $dark-color;
+                }
+
+                & .current {
+                    font-size: 16px;
+                    color: $dark-color;
+                    line-height: 33px;
+                    font-weight: 500;
+                }
+
+                & .list {
+                    width: 100%;
+
+                    & .option {
+
+                        &.selected {}
+
+                        &:hover {}
+                    }
+
+                    &:hover {
+                        & .option:not(:hover) {}
+                    }
+                }
+            }
+        }
+
+        & .product-quantity{
+            background-color: $white-color;
+            border: 1px solid $gray-4;
+            overflow: hidden;
+            border-radius: 4px;
+            display: inline-block;
+
+            & button{
+                width: 30px;
+                height: 35px;
+                padding: 0;
+                font-size: 20px;
+                border: 0;
+                background-color: transparent;
+                @include transition(0.4s);
+                color: rgba($dark-color, 0.8);
+
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+            & input{
+                width: 45px;
+                height: 35px;
+                border: 0;
+                padding: 0 5px;
+                text-align: center;
+                font-weight: 700;
+                background-color: transparent;
+                color: $dark-color;
+            }
+        }
+
+        & .price{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            color: $dark-color;
+        }
+        
+        & .action{
+            & li{
+                display: inline-block;
+
+                & a{
+                    font-size: 24px;
+                    width: 32px;
+                    height: 32px;
+                    line-height: 32px;
+                    text-align: center;
+
+                    &.favorite{
+                        color: $dark-light;
+                    }
+                    &.delete{
+                        color: $error-color;
+                    }
+                }
+            }
+        }
+    }
+    
+    & .checkout-coupon-total{
+        & .checkout-coupon{
+            width: 50%;
+            padding: 16px;
+
+            @media #{$xs}{
+                width: 100%;
+            }
+            
+            & span{
+                font-size: 13px;
+                line-height: 16px;
+                color: $dark-color;
+            }
+            
+            & .single-form{
+                margin-top: 0;
+                
+                & .form-input{
+                    width: 194px;
+                    margin-top: 8px;
+                    margin-right: 8px;
+                }
+                & .main-btn{
+                    margin-top: 8px;
+                }
+            }
+        }
+        & .checkout-total{
+            width: 50%;
+            border-left: 1px solid $white-light;
+            
+            @media #{$xs}{
+                width: 100%;
+                border-left: 0;
+                border-top: 1px solid $white-light;
+            }
+
+            & .single-total{
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                -webkit-box-pack: flex-end;
+                -ms-flex-pack: flex-end;
+                justify-content: flex-end;
+                padding: 0 8px;
+                
+                & .value{
+                    font-weight: 300;
+                    font-size: 14px;
+                    line-height: 32px;
+                    margin-right: 16px;
+                    color: $dark-color;
+                }
+                & .price{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 32px;
+                    color: $dark-color;
+                    width: 85px;
+                }
+                
+                &.total-payable{
+                    border-top: 1px solid $white-light;
+                    
+                    & .value{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        &.checkout-coupon-total-2{
+            & .checkout-coupon{
+                width: 70%;
+    
+                @media #{$xs}{
+                    width: 100%;
+                }
+            }
+            & .checkout-total{
+                width: 30%;   
+
+                @media #{$xs}{
+                    width: 100%;
+                }
+
+                & .single-total{
+                    -webkit-box-pack: space-between;
+                    -ms-flex-pack: space-between;
+                    justify-content: space-between;
+                    
+                    & .value{}
+                    & .price{
+                        width: auto;
+                    }
+                    
+                    &.total-payable{                        
+                        & .value{}
+                    }
+                }
+            }
+        }
+    }
+    & .checkout-btn{
+        padding: 0px 16px 16px;
+        border-top: 1px solid $white-light;
+
+        & .main-btn{
+            margin-top: 16px;
+        }
+    }
+}
+
+.checkout-style-dark-1{
+    background-color: $secondary-3-variant;
+
+    & .checkout-table{
+        & .table{
+            margin-bottom: 0;
+            
+            & thead{
+                & tr{
+                    & th{
+                        color: rgba($white-color, 0.6);
+                        border-bottom: 1px solid rgba($white-color, 0.38);
+                    }
+                }
+            }
+            & tbody{
+                & tr{
+                    & td{
+                        border-bottom: 1px solid rgba($white-color, 0.38);
+                    }
+                }
+            }
+        }
+        
+        & .product-cart{
+            & .product-thumb{
+                & img{}
+            }
+            & .product-content{
+                padding-left: 8px;
+
+                & .title{
+                    & a{
+                        color: $white-color;
+                        &:hover{
+                            color: $secondary-1-color ;
+                        }
+                    }
+                }
+                & span{
+                    color: rgba($white-color, 0.6);
+                }
+            }
+        }
+
+        & .product-size{
+            position: relative;
+
+            & .nice-select {
+                border: 0;
+                background-color: rgba($white-color, 0.24);
+
+
+                &:focus {}
+
+                &::after {
+                    border-color: $white-color;
+                }
+
+                & .current {
+                    color: $white-color;
+                }
+
+                & .list{
+                    @include box-shadow (2px 4px 8px rgba($dark-color, 0.25));
+    
+                    & .option {
+                        background-color: $primary-color;
+                        color: $white-color;
+    
+                        &.selected {
+                            background-color: $primary-variant;
+                        }
+    
+                        &:hover{
+                            background-color: $primary-variant !important;
+                        }
+                    }
+    
+                    &:hover{                
+                        & .option:not(:hover){
+                            background-color: $primary-color !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .product-quantity{
+            background-color: rgba($white-color, 0.24);
+            border: 0;
+
+            & button{
+                color: $white-color;
+
+                &:hover{
+                    color: $secondary-1-color ;
+                }
+            }
+            & input{
+                background-color: transparent;
+                color: $white-color;
+            }
+        }
+
+        & .price{
+            color: $white-color;
+        }
+        
+        & .action{
+            & li{
+                & a{
+                    &.favorite{
+                        color: rgba($white-color, 0.6);
+                    }
+                    &.delete{
+                        color: $error-color;
+                    }
+                }
+            }
+        }
+    }
+    & .checkout-coupon-total{
+        & .checkout-coupon{            
+            & span{
+                color: $white-color;
+            }
+            
+            & .single-form{                
+                & .form-input{}
+                & .main-btn{}
+            }
+        }
+        & .checkout-total{
+            border-left: 1px solid rgba($white-color, 0.38);
+
+            @media #{$xs}{
+                border-top: 1px solid rgba($white-color, 0.38);
+            }
+            
+            & .single-total{                
+                & .value{
+                    color: $white-color;
+                }
+                & .price{
+                    color: $white-color;
+                }
+                
+                &.total-payable{
+                    border-top: 1px solid rgba($white-color, 0.38);
+                    
+                    & .value{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    & .checkout-btn{
+        border-top: 1px solid rgba($white-color, 0.38);
+    }
+}
+
+

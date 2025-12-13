@@ -1,0 +1,31 @@
+/*=====  Page Banner Style =====*/
+.page-banner {
+  background-color: $primary-color;
+  padding-top: 40px;
+  padding-bottom: 45px;
+}
+
+.page-banner-content {
+  & .sub-title {
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 55px;
+    color: $white-color;
+    @media #{$xs} {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  & .page-title {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 60px;
+    color: $white-color;
+    margin-top: 10px;
+    @media #{$xs} {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+}

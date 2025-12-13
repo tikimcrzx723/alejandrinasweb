@@ -1,0 +1,23 @@
+// clients-logo-section css
+
+.clients-logo-section {
+
+  .client-logo-active {
+
+    .single-logo-wrapper {
+      padding: 10px 20px;
+      text-align: center;
+      opacity: .5;
+      @include transition(.3s);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .slick-slide {
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
