@@ -64,26 +64,24 @@ Sitio web en Go que expone una API y vistas HTML usando [Echo](https://echo.labs
    ```bash
    sudo -u alejandrinas git clone git@github.com:tikimcrzx723/alejandrinasweb.git /opt/alejandrinasweb/src
    cd /opt/alejandrinasweb/src
+   export PATH="$PATH:$(go env GOPATH)/bin"
+   templ generate
    go build -o /opt/alejandrinasweb/bin/alejandrinasweb .
    ```
 
 4. **Variables de entorno**
    ```bash
-   sudo mkdir -p /etc/alejandrinasweb
-   sudo tee /etc/alejandrinasweb/env >/dev/null <<'EOF'
+   sudo tee /etc/alejandrinasweb.env >/dev/null <<'EOF'
    SERVER_HOST=0.0.0.0
-   SERVER_PORT=8080
-   DB_USER=alejandrinas
-   DB_PASSWORD=********
-   DB_HOST=127.0.0.1
-   DB_PORT=5432
-   DB_NAME=alejandrinasweb
-   DB_SSL_MODE=disable
-   DB_MIN_CONN=3
-   DB_MAX_CONN=20
+   SERVER_PORT=9090
+   API_URL=https://alejandrinasapi.store/api/v1/
+   CSRF_COOKIE_SECURE=true
+   CSRF_TRUSTED_ORIGINS=https://alejandrina.shop
+   CSRF_TOKEN_KEY=tu-secret-de-32-bytes
+   SESSION_AUTH_KEY=tu-auth-key
+   SESSION_ENC_KEY=tu-enc-key
    EOF
-   sudo chown root:alejandrinas /etc/alejandrinasweb/env
-   sudo chmod 640 /etc/alejandrinasweb/env
+   sudo chmod 600 /etc/alejandrinasweb.env
    ```
 
 5. **Servicio systemd**
@@ -96,7 +94,7 @@ Sitio web en Go que expone una API y vistas HTML usando [Echo](https://echo.labs
    [Service]
    User=alejandrinas
    WorkingDirectory=/opt/alejandrinasweb/src
-   EnvironmentFile=/etc/alejandrinasweb/env
+   EnvironmentFile=/etc/alejandrinasweb.env
    ExecStart=/opt/alejandrinasweb/bin/alejandrinasweb
    Restart=on-failure
    StandardOutput=append:/var/log/alejandrinasweb/app.log
@@ -119,7 +117,7 @@ Sitio web en Go que expone una API y vistas HTML usando [Echo](https://echo.labs
        server_name alejandrina.shop www.alejandrina.shop;
 
        location / {
-           proxy_pass http://127.0.0.1:8080;
+           proxy_pass http://127.0.0.1:9090;
            proxy_set_header Host $host;
            proxy_set_header X-Real-IP $remote_addr;
            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -147,7 +145,7 @@ Sitio web en Go que expone una API y vistas HTML usando [Echo](https://echo.labs
 
 - Ver estado del servicio: `sudo systemctl status alejandrinasweb`
 - Logs de la app: `journalctl -u alejandrinasweb -f`
-- Verificar puertos: `ss -tulpn | grep 8080`
+- Verificar puertos: `ss -tulpn | grep 9090`
 - Probar sitio: `curl -I https://alejandrina.shop`
 
 ## Deploy manual rápido
@@ -155,10 +153,10 @@ Sitio web en Go que expone una API y vistas HTML usando [Echo](https://echo.labs
 ```bash
 ssh alejandrinas@your-server '
   cd /opt/alejandrinasweb/src &&
-  git fetch --all &&
-  git reset --hard origin/main &&
+  git pull &&
+  export PATH="$PATH:$(go env GOPATH)/bin" &&
+  templ generate &&
   go build -o /opt/alejandrinasweb/bin/alejandrinasweb . &&
-  make migrate-up &&
   sudo systemctl restart alejandrinasweb
 '
 ```
@@ -173,6 +171,13 @@ sudo install -m 755 scripts/deploy.sh /opt/alejandrinasweb/deploy.sh
 sudo /opt/alejandrinasweb/deploy.sh
 ```
 
-El script sincroniza `main`, compila el binario, intenta correr migraciones (si `migrate` está disponible y `DB_ADDR` existe) y reinicia el servicio systemd.
+El script sincroniza `main`, corre `templ generate`, compila el binario, intenta correr migraciones (si `migrate` está disponible y `DB_ADDR` existe) y reinicia el servicio systemd.
 
 Adapta los valores (usuario, dominio, credenciales) a tu entorno antes de ejecutar los comandos.
+
+## Cambios recientes (produccion)
+
+- Los templates usan `API_URL` desde el entorno en lugar de `localhost`.
+- El deploy requiere `templ generate` antes del build.
+- Se agrego modal de categoria en la pagina de productos.
+- CSRF en produccion necesita `CSRF_COOKIE_SECURE=true` y `CSRF_TRUSTED_ORIGINS` con el dominio HTTPS.
