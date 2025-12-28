@@ -2,6 +2,7 @@ package routes
 
 import (
 	"crypto/sha256"
+	"crypto/tls"
 	"encoding/base64"
 	"fmt"
 	"net/http"
@@ -43,6 +44,18 @@ func NewRoutes() Routes {
 		controllers.RegisterAppContext,
 		controllers.RegisterFlashMessageContext,
 	)
+
+	e.Pre(func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			if c.Request().Header.Get("X-Forwarded-Proto") == "https" {
+				r := c.Request()
+				r.URL.Scheme = "https"
+				r.TLS = &tls.ConnectionState{}
+				c.SetRequest(r)
+			}
+			return next(c)
+		}
+	})
 
 	csrfSecure := env.GetBool("CSRF_COOKIE_SECURE", false)
 	sameSiteMode := csrf.SameSiteDefaultMode
