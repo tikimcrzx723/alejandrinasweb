@@ -1,6 +1,23 @@
 package views
 
 import "time"
+import "github.com/tikimcrzx723/alejandrinasweb/internal/api"
+import "context"
+import "github.com/tikimcrzx723/alejandrinasweb/routes/contexts"
+
+func getAllCategories() map[int]string {
+  categories, err := api.GetAllCategories(context.Background(), "http://localhost:8080/api/v1")
+	if err != nil {
+		return nil
+	}
+
+	var categoryNames = make(map[int]string)
+	for _, category := range categories.Categories {
+    categoryNames[category.ID] = category.Name
+	}
+
+	return categoryNames
+}
 
 templ navigation() {
     <!--====== Preloader Part Start ======-->
@@ -33,36 +50,38 @@ templ navigation() {
                 <!-- navbar top left Start -->
                 <div class="navbar-top-left">
                   <ul class="navbar-top-link">
-                    <li><a href="#0">Sobre Nosotros</a></li>
-                    <li><a href="#0">Ayuda</a></li>
-                    <li><a href="#0">Contacto</a></li>
+                    // <li><a href="#0">Sobre Nosotros</a></li>
+                    // <li><a href="#0">Ayuda</a></li>
+                    // <li><a href="#0">Contacto</a></li>
                     <li class="d-none d-md-block">
                       <a href="#0"
-                        ><i class="mdi mdi-phone-in-talk"></i> +8801234567890</a>
+                        ><i class="mdi mdi-phone-in-talk"></i>+502-3196-7779</a>
                     </li>
                   </ul>
                 </div>
                 <!-- navbar top left Ends -->
-                <!-- navbar top right Start -->
+
                 <div class="navbar-top-right">
                   <ul class="navbar-top-link">
-                    // <li>
-                    //   <select>
-                    //     <option value="0" selected>English</option>
-                    //     <option value="1">Español</option>
-                    //     <option value="2">Filipino</option>
-                    //     <option value="3">Français</option>
-                    //     <option value="4">العربية</option>
-                    //     <option value="5">हिन्दी</option>
-                    //     <option value="6">বাংলা</option>
-                    //   </select>
-                    // </li>
-                    // <li>
-                    //   <a href="#0"><i class="mdi mdi-account"></i>Login</a>
-                    // </li>
+                    if contexts.ExtractApp(ctx).IsAuthenticated {
+                      <li>
+                        <a href={templ.SafeURL("/logout")}><i class="mdi mdi-account"></i>Cerrar Sesión</a>
+                      </li>
+                      if contexts.ExtractApp(ctx).Role == "admin" {
+                        <li>
+                          <a href={templ.SafeURL("/admin/dashboard/product/register")}><i class="mdi mdi-account"></i>Admin</a>
+                        </li>
+                      }
+                    } else {
+                      <li>
+                        <a href={templ.SafeURL("/login")}><i class="mdi mdi-account"></i>Iniciar Sesión</a>
+                      </li>
+                      <li>
+                        <a href={templ.SafeURL("/register")}><i class="mdi mdi-account"></i>Crear cuenta</a>
+                      </li>
+                    }
                   </ul>
                 </div>
-                <!-- navbar top right Ends -->
               </div>
             </div>
           </div>
@@ -76,8 +95,8 @@ templ navigation() {
               >
                 <!-- desktop logo Start -->
                 <div class="desktop-logo d-lg-block">
-                  <a href="#0"
-                    ><img src="/static/images/logos/alejandrinas_logo.svg" width="128px" alt="Logo"
+                  <a href={templ.SafeURL("/")}
+                    ><img src="/static/images/logos/alejandrinas_logo.svg" width="96px" alt="Logo"
                   /></a>
                 </div>
                 <!-- desktop logo Ends -->
@@ -96,9 +115,9 @@ templ navigation() {
                         <i class="mdi mdi-close"></i>
                       </a>
                     </div>
-                    <li><a href="/">Labiales</a></li>
-                    <li><a href="/">Tintes</a></li>
-                    <li><a href="/">Joyeria</a></li>
+                    for _, category := range getAllCategories() {
+                      <li><a href="/category/{category}">{category}</a></li>
+                    }
                   </ul>
                 </div>
                 <!-- navbar menu Ends -->
@@ -109,9 +128,9 @@ templ navigation() {
                       <div class="select-position">
                         <select id="select26">
                           <option value="" selected>All</option>
-                          <option value="1">Labiales</option>
-                          <option value="2">Tintes</option>
-                          <option value="3">Joyerias</option>
+                          for _, category := range getAllCategories(){
+                            <option value="{category}">{category}</option>
+                          }
                         </select>
                       </div>
                     </div>
@@ -138,17 +157,19 @@ templ navigation() {
     <!--====== Navbar Style 7 Part Ends ======-->
 }
 
-templ base() {
+templ base(title string) {
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="utf-8">
 
         <!--====== Title ======-->
-        <title>Alejandrinas</title>
+        <title>{title}</title>
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="The Rock" />
+        <meta property="og:image" content="/static/images/logos/alejandrinas_logo.svg" />
 
         <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
 
@@ -216,6 +237,7 @@ templ base() {
 
         <!--====== Main js ======-->
         <script src="/static/js/main.js"></script> 
+        <script src="/static/js/sweet-alert.js"></script>
     </body>
     </html>
 }

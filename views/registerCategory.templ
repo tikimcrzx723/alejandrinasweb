@@ -1,0 +1,53 @@
+package views
+
+templ RegisterCategory(title string, csrfToken string) {
+    @adminBaseLayout(title) {
+        <div class="container-fluid p-4">
+            <!-- Contact Form -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">
+                                {title}
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" action={templ.SafeURL("/admin/category/register")}>
+                                <input type="hidden" name="gorilla.csrf.Token" value={ csrfToken } />
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <div class="form-group floating-label">
+                                            <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="category_name" 
+                                            >
+                                            <label class="form-label">Nombre de la Categoria</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group floating-label">
+                                            <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="category_description" 
+                                            >
+                                            <label class="form-label" for="category_description">Descripcion de la categoria</label>
+                                            <div class="invalid-feedback" x-show="errors.email" x-text="errors.email"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-secondary">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+    }
+}

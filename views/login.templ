@@ -1,0 +1,62 @@
+package views
+
+templ LoginPage(title string, csrfToken string) {
+    @base(title) {
+        <section class="login-registration-wrapper pt-50 mt-12 mb-12 pb-100">
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="login-registration-style-2 mt-50">
+                    <h1 class="heading-4 font-weight-500 title">Iniciar Sesión</h1>
+                    <div class="login-registration-form pt-10">
+                        <form action={templ.SafeURL("/login")} method="POST">
+                        <input type="hidden" name="gorilla.csrf.Token" value={ csrfToken } />
+                        <div class="single-form form-default form-border">
+                            <label for="email">Correo Electrónico</label>
+                            <div class="form-input">
+                            <input id="email" name="email" type="email" placeholder="user@email.com" />
+                            <i class="mdi mdi-email"></i>
+                            </div>
+                        </div>
+                        <div class="single-form form-default form-border">
+                            <label for="password">Your Password</label>
+                            <div class="form-input">
+                            <input
+                                id="password-7"
+                                name="password"
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <i class="mdi mdi-lock"></i>
+                            <span
+                                toggle="#password-7"
+                                class="mdi mdi-eye-outline toggle-password"
+                            ></span>
+                            </div>
+                        </div>
+                        <div
+                            class="login-checkbox-forget d-sm-flex justify-content-between align-items-center"
+                        >
+                            <div class="single-checkbox checkbox-style-3">
+                            <input type="checkbox" id="login-7" />
+                            <label for="login-7"><span></span> </label>
+                            <p>Remember Me</p>
+                            </div>
+                        </div>
+                        <div class="single-form">
+                            <button class="main-btn primary-btn">Sign in</button>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="text-center">
+                        <p class="login">
+                        Don’t have an account? <a href="signup-page.html">Sign up</a>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    }
+}

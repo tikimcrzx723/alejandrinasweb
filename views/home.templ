@@ -1,7 +1,10 @@
 package views
 
-templ HomePage() {
-    @base() {
+import "github.com/tikimcrzx723/alejandrinasweb/internal/dtos"
+import "fmt"
+
+templ HomePage(title string, products []dtos.Product) {
+    @base(title) {
     <!--====== Header Style 1 Part Start ======-->
     <section class="header-style-1">
         <div class="header-big">
@@ -102,129 +105,31 @@ templ HomePage() {
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-style-1 mt-30">
-                        <div class="product-image">
-                            <span class="icon-text text-style-1">NEW</span>
-                            <div class="product-active">
-                                <div class="product-item active">
-                                    <img src="/static/images/products/product00.jpeg" alt="product">
+                for _, product := range products {
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="product-style-1 mt-30">
+                            <div class="product-image">
+                                <div class="product-active">
+                                    for _, image := range product.Images {
+                                        <div class="product-item active">
+                                            <img src={templ.SafeURL(image.URL)} alt={image.AltText}>
+                                        </div>
+                                    }
                                 </div>
-                                <div class="product-item">
-                                    <img src="/static/images/products/product00.jpeg" alt="product">
-                                </div>
+                                <a class="add-wishlist" href="javascript:void(0)">
+                                    <i class="mdi mdi-heart-outline"></i>
+                                </a>
                             </div>
-                            <a class="add-wishlist" href="javascript:void(0)">
-                                <i class="mdi mdi-heart-outline"></i>
-                            </a>
-                        </div>
-                        <div class="product-content text-center">
-                            <h4 class="title"><a href="product-details-page.html">Labial</a></h4>
+                            <div class="product-content text-center">
+                                <h4 class="title"><a href={templ.SafeURL(fmt.Sprintf("/product/%s", product.SKU))}>{product.Name}</a></h4>
+                                <a href="javascript:void(0)" class="main-btn secondary-1-btn">
+                                    <img src="assets/images/icon-svg/cart-7.svg" alt="">
+                                    $ {product.Price}
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-style-1 mt-30">
-                        <div class="product-image">
-                            <span class="icon-text text-style-1">20% off</span>
-                            <div class="product-active">
-                                <div class="product-item active">
-                                    <img src="/static/images/products/product01.jpeg" alt="product">
-                                </div>
-                                <div class="product-item">
-                                    <img src="/static/images/products/product01.jpeg" alt="product">
-                                </div>
-                            </div>
-                            <a class="add-wishlist" href="javascript:void(0)">
-                                <i class="mdi mdi-heart-outline"></i>
-                            </a>
-                        </div>
-                        <div class="product-content text-center">
-                            <h4 class="title"><a href="product-details-page.html">Labial</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-style-1 mt-30">
-                        <div class="product-image">
-                            <div class="product-active">
-                                <div class="product-item active">
-                                    <img src="/static/images/products/product02.jpeg" alt="product">
-                                </div>
-                                <div class="product-item">
-                                    <img src="/static/images/products/product02.jpeg" alt="product">
-                                </div>
-                            </div>
-                            <a class="add-wishlist" href="javascript:void(0)">
-                                <i class="mdi mdi-heart-outline"></i>
-                            </a>
-                        </div>
-                        <div class="product-content text-center">
-                            <h4 class="title"><a href="product-details-page.html">Labial</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-style-1 mt-30">
-                        <div class="product-image">
-                            <div class="product-active">
-                                <div class="product-item active">
-                                    <img src="/static/images/products/product03.jpeg" alt="product">
-                                </div>
-                                <div class="product-item">
-                                    <img src="/static/images/products/product03.jpeg" alt="product">
-                                </div>
-                            </div>
-                            <a class="add-wishlist" href="javascript:void(0)">
-                                <i class="mdi mdi-heart-outline"></i>
-                            </a>
-                        </div>
-                        <div class="product-content text-center">
-                            <h4 class="title"><a href="product-details-page.html">Labial</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-style-1 mt-30">
-                        <div class="product-image">
-                            <div class="product-active">
-                                <div class="product-item active">
-                                    <img src="/static/images/products/product04.jpeg" alt="product">
-                                </div>
-                                <div class="product-item">
-                                    <img src="/static/images/products/product04.jpeg" alt="product">
-                                </div>
-                            </div>
-                            <a class="add-wishlist" href="javascript:void(0)">
-                                <i class="mdi mdi-heart-outline"></i>
-                            </a>
-                        </div>
-                        <div class="product-content text-center">
-                            <h4 class="title"><a href="product-details-page.html">Labial</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-style-1 mt-30">
-                        <div class="product-image">
-                            <span class="icon-text text-style-1">40% off</span>
-                            <div class="product-active">
-                                <div class="product-item active">
-                                    <img src="/static/images/products/product05.jpeg" alt="product">
-                                </div>
-                                <div class="product-item">
-                                    <img src="/static/images/products/product05.jpeg" alt="product">
-                                </div>
-                            </div>
-                            <a class="add-wishlist" href="javascript:void(0)">
-                                <i class="mdi mdi-heart-outline"></i>
-                            </a>
-                        </div>
-                        <div class="product-content text-center">
-                            <h4 class="title"><a href="product-details-page.html">Labial</a></h4>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>

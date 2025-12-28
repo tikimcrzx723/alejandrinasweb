@@ -1,0 +1,50 @@
+package views
+
+type errorPageData struct {
+    link string
+    linkTitle string
+    title string
+    msg string
+}
+
+type errorPageOption func(*errorPageData)
+
+func WithErrPageTitle(title string) errorPageOption {
+    return func(epd *errorPageData) {
+        epd.title = title
+    }
+}
+
+func WithErrPageMsg(msg string) errorPageOption {
+    return func(epd *errorPageData) {
+        epd.msg = msg
+    }
+}
+
+templ errorPage(data errorPageData) {
+    @base("Pagina de Error") {
+        <div class="row pt-100 pb-100">
+            <div class="col-md-12 text-center">
+                <img src="/static/images/404.svg">
+                <h1>{data.title}</h1>
+                <p>{data.msg}</p>
+                <a href={data.link} class="btn btn-primary">{data.linkTitle}</a>
+            </div>
+        </div>
+    }
+}
+
+func ErrorPage(opts ...errorPageOption) templ.Component {
+    data := &errorPageData{
+        title: "Oops! Pagina no encontrada",
+        msg: "La página que busca no está disponible o ha sido trasladada. Pruebe con otra página o vaya a la página de inicio con el botón de abajo.",
+        link: "/",
+        linkTitle: "Ir a la página de inicio",
+    }
+
+    for _, opt := range opts {
+        opt(data)
+    }
+
+    return errorPage(*data)
+}

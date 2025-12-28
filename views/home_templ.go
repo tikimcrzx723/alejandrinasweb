@@ -8,7 +8,10 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func HomePage() templ.Component {
+import "github.com/tikimcrzx723/alejandrinasweb/internal/dtos"
+import "fmt"
+
+func HomePage(title string, products []dtos.Product) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -41,13 +44,98 @@ func HomePage() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!--====== Header Style 1 Part Start ======--> <section class=\"header-style-1\"><div class=\"header-big\"><div class=\"header-items-active\"><div class=\"single-header-item bg_cover\" style=\"background-image: url(/static/images/banners/banner00.png);\"><div class=\"header-item-content\"><h3 class=\"title\">Los mejores productos para el cuidado de tu piel</h3><a href=\"javascript:void(0)\" class=\"link\">Aprovecha las ofertas especiales</a></div></div><div class=\"single-header-item bg_cover\" style=\"background-image: url(/static/images/banners/banner01.png);\"><div class=\"header-item-content\"><h3 class=\"title\">Los mejores productos para el cuidado de tu piel</h3><a href=\"javascript:void(0)\" class=\"link\">Aprovecha las ofertas especiales</a></div></div><div class=\"single-header-item bg_cover\" style=\"background-image: url(/static/images/banners/banner00.png);\"><div class=\"header-item-content\"><h3 class=\"title\">Los mejores productos para el cuidado de tu piel</h3><a href=\"javascript:void(0)\" class=\"link\">Aprovecha las ofertas especiales</a></div></div></div></div><div class=\"header-min\"><div class=\"header-min-item product-style-25 bg_cover\" style=\"background-image: url(/static/images/products/product00.jpeg);\"><div class=\"product-content\"><h4 class=\"title\"><a href=\"product-details-page.html\">Skin Care</a></h4></div></div><div class=\"header-min-item product-style-25 bg_cover\" style=\"background-image: url(/static/images/products/product01.jpeg);\"><div class=\"product-content\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div></section><!--====== Header Style 1 Part Ends ======--> <!--====== Content Card Style 4 Part Start ======--> <section class=\"content-card-style-4 pt-70 pb-100\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-lg-4 col-md-7 col-sm-8\"><div class=\"single-content mt-15 text-center\"><div class=\"content-icon\"><i class=\"mdi mdi-truck-fast\"></i></div><div class=\"content-content\"><h4 class=\"title\"><a href=\"javascript:void(0)\">3 dias de entrega</a></h4><p>Disponible en la mayoría de las áreas metropolitanas para productos seleccionados en stock.</p><a href=\"javascript:void(0)\" class=\"more\">learn more</a></div></div></div><div class=\"col-lg-4 col-md-7 col-sm-8\"><div class=\"single-content mt-15 text-center\"><div class=\"content-icon\"><i class=\"mdi mdi-message-text\"></i></div><div class=\"content-content\"><h4 class=\"title\"><a href=\"javascript:void(0)\">Obtenga ayuda para comprar</a></h4><p>¿Tienes alguna pregunta? Llama a un especialista o chatea en línea para obtener ayuda.</p><a href=\"contact-page.html\" class=\"more\">Contactanos</a></div></div></div><div class=\"col-lg-4 col-md-7 col-sm-8\"><div class=\"single-content mt-15 text-center\"><div class=\"content-icon\"><i class=\"mdi mdi-ticket-percent\"></i></div><div class=\"content-content\"><h4 class=\"title\"><a href=\"javascript:void(0)\">Siempre los mejores descuentos</a></h4><p>Obtenga un 3 % de reembolso diario con nuestras ofertas especiales de financiamiento.</p><a href=\"javascript:void(0)\" class=\"more\">aprenda mas</a></div></div></div></div></div></section><!--====== Content Card Style 4 Part Ends ======--> <!--====== Product Style 1 Part Start ======--> <section class=\"product-wrapper pt-100 pb-70\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"mb-50\"><h1 class=\"heading-1 font-weight-700\">Artículos Destacados</h1></div></div></div><div class=\"row\"><div class=\"col-lg-4 col-sm-6\"><div class=\"product-style-1 mt-30\"><div class=\"product-image\"><span class=\"icon-text text-style-1\">NEW</span><div class=\"product-active\"><div class=\"product-item active\"><img src=\"/static/images/products/product00.jpeg\" alt=\"product\"></div><div class=\"product-item\"><img src=\"/static/images/products/product00.jpeg\" alt=\"product\"></div></div><a class=\"add-wishlist\" href=\"javascript:void(0)\"><i class=\"mdi mdi-heart-outline\"></i></a></div><div class=\"product-content text-center\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div><div class=\"col-lg-4 col-sm-6\"><div class=\"product-style-1 mt-30\"><div class=\"product-image\"><span class=\"icon-text text-style-1\">20% off</span><div class=\"product-active\"><div class=\"product-item active\"><img src=\"/static/images/products/product01.jpeg\" alt=\"product\"></div><div class=\"product-item\"><img src=\"/static/images/products/product01.jpeg\" alt=\"product\"></div></div><a class=\"add-wishlist\" href=\"javascript:void(0)\"><i class=\"mdi mdi-heart-outline\"></i></a></div><div class=\"product-content text-center\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div><div class=\"col-lg-4 col-sm-6\"><div class=\"product-style-1 mt-30\"><div class=\"product-image\"><div class=\"product-active\"><div class=\"product-item active\"><img src=\"/static/images/products/product02.jpeg\" alt=\"product\"></div><div class=\"product-item\"><img src=\"/static/images/products/product02.jpeg\" alt=\"product\"></div></div><a class=\"add-wishlist\" href=\"javascript:void(0)\"><i class=\"mdi mdi-heart-outline\"></i></a></div><div class=\"product-content text-center\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div><div class=\"col-lg-4 col-sm-6\"><div class=\"product-style-1 mt-30\"><div class=\"product-image\"><div class=\"product-active\"><div class=\"product-item active\"><img src=\"/static/images/products/product03.jpeg\" alt=\"product\"></div><div class=\"product-item\"><img src=\"/static/images/products/product03.jpeg\" alt=\"product\"></div></div><a class=\"add-wishlist\" href=\"javascript:void(0)\"><i class=\"mdi mdi-heart-outline\"></i></a></div><div class=\"product-content text-center\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div><div class=\"col-lg-4 col-sm-6\"><div class=\"product-style-1 mt-30\"><div class=\"product-image\"><div class=\"product-active\"><div class=\"product-item active\"><img src=\"/static/images/products/product04.jpeg\" alt=\"product\"></div><div class=\"product-item\"><img src=\"/static/images/products/product04.jpeg\" alt=\"product\"></div></div><a class=\"add-wishlist\" href=\"javascript:void(0)\"><i class=\"mdi mdi-heart-outline\"></i></a></div><div class=\"product-content text-center\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div><div class=\"col-lg-4 col-sm-6\"><div class=\"product-style-1 mt-30\"><div class=\"product-image\"><span class=\"icon-text text-style-1\">40% off</span><div class=\"product-active\"><div class=\"product-item active\"><img src=\"/static/images/products/product05.jpeg\" alt=\"product\"></div><div class=\"product-item\"><img src=\"/static/images/products/product05.jpeg\" alt=\"product\"></div></div><a class=\"add-wishlist\" href=\"javascript:void(0)\"><i class=\"mdi mdi-heart-outline\"></i></a></div><div class=\"product-content text-center\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div></div></div></section><!--====== Product Style 1 Part Ends ======--> <!--====== Product Style 7 Part Start ======-->                                                                                                                                                                                                                            <!--====== Product Style 7 Part Ends ======--> <!--====== Subscribe Part Start ======-->                          <!--====== Subscribe Part Ends ======-->")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!--====== Header Style 1 Part Start ======--> <section class=\"header-style-1\"><div class=\"header-big\"><div class=\"header-items-active\"><div class=\"single-header-item bg_cover\" style=\"background-image: url(/static/images/banners/banner00.png);\"><div class=\"header-item-content\"><h3 class=\"title\">Los mejores productos para el cuidado de tu piel</h3><a href=\"javascript:void(0)\" class=\"link\">Aprovecha las ofertas especiales</a></div></div><div class=\"single-header-item bg_cover\" style=\"background-image: url(/static/images/banners/banner01.png);\"><div class=\"header-item-content\"><h3 class=\"title\">Los mejores productos para el cuidado de tu piel</h3><a href=\"javascript:void(0)\" class=\"link\">Aprovecha las ofertas especiales</a></div></div><div class=\"single-header-item bg_cover\" style=\"background-image: url(/static/images/banners/banner00.png);\"><div class=\"header-item-content\"><h3 class=\"title\">Los mejores productos para el cuidado de tu piel</h3><a href=\"javascript:void(0)\" class=\"link\">Aprovecha las ofertas especiales</a></div></div></div></div><div class=\"header-min\"><div class=\"header-min-item product-style-25 bg_cover\" style=\"background-image: url(/static/images/products/product00.jpeg);\"><div class=\"product-content\"><h4 class=\"title\"><a href=\"product-details-page.html\">Skin Care</a></h4></div></div><div class=\"header-min-item product-style-25 bg_cover\" style=\"background-image: url(/static/images/products/product01.jpeg);\"><div class=\"product-content\"><h4 class=\"title\"><a href=\"product-details-page.html\">Labial</a></h4></div></div></div></section><!--====== Header Style 1 Part Ends ======--> <!--====== Content Card Style 4 Part Start ======--> <section class=\"content-card-style-4 pt-70 pb-100\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-lg-4 col-md-7 col-sm-8\"><div class=\"single-content mt-15 text-center\"><div class=\"content-icon\"><i class=\"mdi mdi-truck-fast\"></i></div><div class=\"content-content\"><h4 class=\"title\"><a href=\"javascript:void(0)\">3 dias de entrega</a></h4><p>Disponible en la mayoría de las áreas metropolitanas para productos seleccionados en stock.</p><a href=\"javascript:void(0)\" class=\"more\">learn more</a></div></div></div><div class=\"col-lg-4 col-md-7 col-sm-8\"><div class=\"single-content mt-15 text-center\"><div class=\"content-icon\"><i class=\"mdi mdi-message-text\"></i></div><div class=\"content-content\"><h4 class=\"title\"><a href=\"javascript:void(0)\">Obtenga ayuda para comprar</a></h4><p>¿Tienes alguna pregunta? Llama a un especialista o chatea en línea para obtener ayuda.</p><a href=\"contact-page.html\" class=\"more\">Contactanos</a></div></div></div><div class=\"col-lg-4 col-md-7 col-sm-8\"><div class=\"single-content mt-15 text-center\"><div class=\"content-icon\"><i class=\"mdi mdi-ticket-percent\"></i></div><div class=\"content-content\"><h4 class=\"title\"><a href=\"javascript:void(0)\">Siempre los mejores descuentos</a></h4><p>Obtenga un 3 % de reembolso diario con nuestras ofertas especiales de financiamiento.</p><a href=\"javascript:void(0)\" class=\"more\">aprenda mas</a></div></div></div></div></div></section><!--====== Content Card Style 4 Part Ends ======--> <!--====== Product Style 1 Part Start ======--> <section class=\"product-wrapper pt-100 pb-70\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"mb-50\"><h1 class=\"heading-1 font-weight-700\">Artículos Destacados</h1></div></div></div><div class=\"row\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			for _, product := range products {
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<div class=\"col-lg-4 col-sm-6\"><div class=\"product-style-1 mt-30\"><div class=\"product-image\"><div class=\"product-active\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				for _, image := range product.Images {
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"product-item active\"><img src=\"")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					var templ_7745c5c3_Var3 string
+					templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(templ.SafeURL(image.URL))
+					if templ_7745c5c3_Err != nil {
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/home.templ`, Line: 115, Col: 78}
+					}
+					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "\" alt=\"")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					var templ_7745c5c3_Var4 string
+					templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(image.AltText)
+					if templ_7745c5c3_Err != nil {
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/home.templ`, Line: 115, Col: 98}
+					}
+					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "\"></div>")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+				}
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "</div><a class=\"add-wishlist\" href=\"javascript:void(0)\"><i class=\"mdi mdi-heart-outline\"></i></a></div><div class=\"product-content text-center\"><h4 class=\"title\"><a href=\"")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var5 templ.SafeURL
+				templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(fmt.Sprintf("/product/%s", product.SKU)))
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/home.templ`, Line: 124, Col: 113}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var6 string
+				templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(product.Name)
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/home.templ`, Line: 124, Col: 128}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "</a></h4><a href=\"javascript:void(0)\" class=\"main-btn secondary-1-btn\"><img src=\"assets/images/icon-svg/cart-7.svg\" alt=\"\"> $ ")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var7 string
+				templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(product.Price)
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/home.templ`, Line: 127, Col: 52}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "</a></div></div></div>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "</div></div></section><!--====== Product Style 1 Part Ends ======--> <!--====== Product Style 7 Part Start ======-->                                                                                                                                                                                                                            <!--====== Product Style 7 Part Ends ======--> <!--====== Subscribe Part Start ======-->                          <!--====== Subscribe Part Ends ======-->")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			return nil
 		})
-		templ_7745c5c3_Err = base().Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = base(title).Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
