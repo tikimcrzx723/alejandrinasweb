@@ -340,7 +340,7 @@ func CreateCategory(c echo.Context) error {
 		return err
 	}
 
-	return c.Redirect(http.StatusSeeOther, "/admin/dashboard/category/register")
+	return c.Redirect(http.StatusSeeOther, "/admin/dashboard/product/register")
 }
 
 func CreateProduct(c echo.Context) error {

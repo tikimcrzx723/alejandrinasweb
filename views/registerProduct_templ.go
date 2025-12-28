@@ -10,6 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import "github.com/tikimcrzx723/alejandrinasweb/internal/dtos"
 import "github.com/tikimcrzx723/alejandrinasweb/internal/api"
+import "github.com/tikimcrzx723/alejandrinasweb/internal/env"
 import "context"
 
 func RegisterProduct(title string, csrfToken string, products dtos.ProductResponse) templ.Component {
@@ -45,14 +46,14 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"container-fluid p-4 p-lg-5\"><!-- Page Header --><div class=\"d-flex justify-content-between align-items-center mb-4 mb-lg-5\"><div><h1 class=\"h3 mb-0\">Administrar Productos</h1><p class=\"text-muted mb-0\">Administra tu catálogo de productos y tu inventario.</p></div><div class=\"d-flex gap-2\"><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#productModal\" onclick=\"openCreateProductModal()\"><i class=\"bi bi-plus-lg me-2\"></i>Agregar Producto</button></div></div><!-- Product Management Container --><div><!-- Product Stats Widgets --><div class=\"row g-4 g-lg-5 mb-5\"><div class=\"col-xl-3 col-lg-6\"><div class=\"card stats-card\"><div class=\"card-body p-3 p-lg-4\"><div class=\"d-flex align-items-center\"><div class=\"stats-icon bg-primary bg-opacity-10 text-primary me-3\"><i class=\"bi bi-box\"></i></div><div><h3 class=\"mb-0 text-muted\">Total de Productos</h3><h3 class=\"mb-0\" x-text=\"stats.total\"></h3><h2 class=\"text-success\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"container-fluid p-4 p-lg-5\"><!-- Page Header --><div class=\"d-flex justify-content-between align-items-center mb-4 mb-lg-5\"><div><h1 class=\"h3 mb-0\">Administrar Productos</h1><p class=\"text-muted mb-0\">Administra tu catálogo de productos y tu inventario.</p></div><div class=\"d-flex gap-2\"><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#productModal\" onclick=\"openCreateProductModal()\"><i class=\"bi bi-plus-lg me-2\"></i>Agregar Producto</button> <button type=\"button\" class=\"btn btn-outline-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#categoryModal\"><i class=\"bi bi-plus-lg me-2\"></i>Agregar Categoria</button></div></div><!-- Product Management Container --><div><!-- Product Stats Widgets --><div class=\"row g-4 g-lg-5 mb-5\"><div class=\"col-xl-3 col-lg-6\"><div class=\"card stats-card\"><div class=\"card-body p-3 p-lg-4\"><div class=\"d-flex align-items-center\"><div class=\"stats-icon bg-primary bg-opacity-10 text-primary me-3\"><i class=\"bi bi-box\"></i></div><div><h3 class=\"mb-0 text-muted\">Total de Productos</h3><h3 class=\"mb-0\" x-text=\"stats.total\"></h3><h2 class=\"text-success\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(products.Meta.Total)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 39, Col: 64}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 43, Col: 64}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -85,7 +86,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var4 string
 				templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(id)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 131, Col: 61}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 135, Col: 61}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 				if templ_7745c5c3_Err != nil {
@@ -98,7 +99,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var5 string
 				templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(category)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 131, Col: 72}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 135, Col: 72}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 				if templ_7745c5c3_Err != nil {
@@ -121,7 +122,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var6 string
 				templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(product.Images[0].URL)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 168, Col: 83}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 172, Col: 83}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 				if templ_7745c5c3_Err != nil {
@@ -134,7 +135,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var7 string
 				templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(product.Name)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 170, Col: 73}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 174, Col: 73}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 				if templ_7745c5c3_Err != nil {
@@ -147,7 +148,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var8 string
 				templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(product.Category.Name)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 175, Col: 109}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 179, Col: 109}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 				if templ_7745c5c3_Err != nil {
@@ -160,7 +161,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var9 string
 				templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(product.Price)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 177, Col: 62}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 181, Col: 62}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 				if templ_7745c5c3_Err != nil {
@@ -173,7 +174,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var10 string
 				templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(product.Stock)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 179, Col: 95}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 183, Col: 95}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
 				if templ_7745c5c3_Err != nil {
@@ -201,7 +202,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var11 string
 				templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(product.SKU)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 202, Col: 85}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 206, Col: 85}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 				if templ_7745c5c3_Err != nil {
@@ -214,7 +215,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var12 string
 				templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinStringErrs(product.Name)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 203, Col: 87}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 207, Col: 87}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var12))
 				if templ_7745c5c3_Err != nil {
@@ -227,7 +228,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var13 string
 				templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(product.CategoryID)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 204, Col: 100}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 208, Col: 100}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 				if templ_7745c5c3_Err != nil {
@@ -240,7 +241,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var14 string
 				templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.JoinStringErrs(product.Price)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 205, Col: 89}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 209, Col: 89}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var14))
 				if templ_7745c5c3_Err != nil {
@@ -253,7 +254,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var15 string
 				templ_7745c5c3_Var15, templ_7745c5c3_Err = templ.JoinStringErrs(product.ID)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 206, Col: 83}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 210, Col: 83}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var15))
 				if templ_7745c5c3_Err != nil {
@@ -266,7 +267,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var16 string
 				templ_7745c5c3_Var16, templ_7745c5c3_Err = templ.JoinStringErrs(product.Stock)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 207, Col: 89}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 211, Col: 89}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var16))
 				if templ_7745c5c3_Err != nil {
@@ -279,7 +280,7 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 				var templ_7745c5c3_Var17 string
 				templ_7745c5c3_Var17, templ_7745c5c3_Err = templ.JoinStringErrs(product.Description)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 208, Col: 101}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 212, Col: 101}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var17))
 				if templ_7745c5c3_Err != nil {
@@ -298,7 +299,15 @@ func RegisterProduct(title string, csrfToken string, products dtos.ProductRespon
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 27, "</div></div></div></div><script>\n            function openCreateProductModal() {\n                const modal = document.getElementById(\"productModal\");\n                const form = modal.querySelector(\"form\");\n                const title = modal.querySelector(\"#productModalTitle\");\n                const submit = form.querySelector(\"button[type='submit']\");\n                const previewsContainer = document.getElementById(\"imagePreviews\");\n                const skuInput = form.querySelector(\"input[name='product_sku']\");\n\n                form.action = \"/admin/product/register\";\n                form.reset();\n                if (skuInput) {\n                    skuInput.value = \"\";\n                }\n                if (previewsContainer) {\n                    previewsContainer.innerHTML = \"\";\n                }\n                title.textContent = \"Agregar Producto\";\n                submit.textContent = \"Guardar Producto\";\n            }\n\n            function openEditProductModal(button) {\n                const modal = document.getElementById(\"productModal\");\n                const form = modal.querySelector(\"form\");\n                const title = modal.querySelector(\"#productModalTitle\");\n                const submit = form.querySelector(\"button[type='submit']\");\n                const previewsContainer = document.getElementById(\"imagePreviews\");\n                const skuInput = form.querySelector(\"input[name='product_sku']\");\n\n                form.action = \"/admin/product/update\";\n                form.reset();\n                if (previewsContainer) {\n                    previewsContainer.innerHTML = \"\";\n                }\n\n                const {id, sku, name, categoryId, price, stock, description } = button.dataset;\n                form.elements[\"product_id\"].value = id || \"\";\n                form.elements[\"product_name\"].value = name || \"\";\n                form.elements[\"product_category\"].value = categoryId || \"\";\n                form.elements[\"product_price\"].value = price || \"\";\n                form.elements[\"product_stock\"].value = stock || \"\";\n                form.elements[\"product_description\"].value = description || \"\";\n                if (skuInput) {\n                    skuInput.value = sku || \"\";\n                }\n\n                title.textContent = \"Editar Producto\";\n                submit.textContent = \"Guardar Cambios\";\n            }\n\n            function showFiles(input) { \n                const previewsContainer = \n                    document.getElementById('imagePreviews'); \n                    \n                previewsContainer.innerHTML = ''; \n                const files = input.files; \n                for (let i = 0; i < files.length; i++) { \n                    const file = files[i]; \n                    const reader = new FileReader(); \n                    reader.onload = function (e) { \n                        const preview = document.createElement('div'); \n                        preview.classList.add('col-md-4', 'mb-3'); \n                        preview.innerHTML = ` \n                            <img src=\"${e.target.result}\" alt=\"Preview\" class=\"img-fluid rounded\"> \n                            <div class=\"text-center mt-2\"> \n                            <span class=\"badge bg-secondary\">${file.name}</span> \n                            </div> \n                        `; \n                        previewsContainer.appendChild(preview); \n                    }; \n                    reader.readAsDataURL(file); \n                } \n            } \n        </script>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 27, "</div></div></div></div><div class=\"modal fade\" id=\"categoryModal\" tabindex=\"-1\"><div class=\"modal-dialog modal-lg\"><div class=\"modal-content\"><div class=\"modal-header\"><h5 class=\"modal-title\">Agregar Categoria</h5><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\"></button></div><div class=\"modal-body\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = formCategory(csrfToken).Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 28, "</div></div></div></div><script>\n            function openCreateProductModal() {\n                const modal = document.getElementById(\"productModal\");\n                const form = modal.querySelector(\"form\");\n                const title = modal.querySelector(\"#productModalTitle\");\n                const submit = form.querySelector(\"button[type='submit']\");\n                const previewsContainer = document.getElementById(\"imagePreviews\");\n                const skuInput = form.querySelector(\"input[name='product_sku']\");\n\n                form.action = \"/admin/product/register\";\n                form.reset();\n                if (skuInput) {\n                    skuInput.value = \"\";\n                }\n                if (previewsContainer) {\n                    previewsContainer.innerHTML = \"\";\n                }\n                title.textContent = \"Agregar Producto\";\n                submit.textContent = \"Guardar Producto\";\n            }\n\n            function openEditProductModal(button) {\n                const modal = document.getElementById(\"productModal\");\n                const form = modal.querySelector(\"form\");\n                const title = modal.querySelector(\"#productModalTitle\");\n                const submit = form.querySelector(\"button[type='submit']\");\n                const previewsContainer = document.getElementById(\"imagePreviews\");\n                const skuInput = form.querySelector(\"input[name='product_sku']\");\n\n                form.action = \"/admin/product/update\";\n                form.reset();\n                if (previewsContainer) {\n                    previewsContainer.innerHTML = \"\";\n                }\n\n                const {id, sku, name, categoryId, price, stock, description } = button.dataset;\n                form.elements[\"product_id\"].value = id || \"\";\n                form.elements[\"product_name\"].value = name || \"\";\n                form.elements[\"product_category\"].value = categoryId || \"\";\n                form.elements[\"product_price\"].value = price || \"\";\n                form.elements[\"product_stock\"].value = stock || \"\";\n                form.elements[\"product_description\"].value = description || \"\";\n                if (skuInput) {\n                    skuInput.value = sku || \"\";\n                }\n\n                title.textContent = \"Editar Producto\";\n                submit.textContent = \"Guardar Cambios\";\n            }\n\n            function showFiles(input) { \n                const previewsContainer = \n                    document.getElementById('imagePreviews'); \n                    \n                previewsContainer.innerHTML = ''; \n                const files = input.files; \n                for (let i = 0; i < files.length; i++) { \n                    const file = files[i]; \n                    const reader = new FileReader(); \n                    reader.onload = function (e) { \n                        const preview = document.createElement('div'); \n                        preview.classList.add('col-md-4', 'mb-3'); \n                        preview.innerHTML = ` \n                            <img src=\"${e.target.result}\" alt=\"Preview\" class=\"img-fluid rounded\"> \n                            <div class=\"text-center mt-2\"> \n                            <span class=\"badge bg-secondary\">${file.name}</span> \n                            </div> \n                        `; \n                        previewsContainer.appendChild(preview); \n                    }; \n                    reader.readAsDataURL(file); \n                } \n            } \n        </script>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -333,69 +342,69 @@ func formProduct(csrfToken string) templ.Component {
 			templ_7745c5c3_Var18 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 28, "<form method=\"post\" action=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 29, "<form method=\"post\" action=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var19 templ.SafeURL
 		templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL("/admin/product/register"))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 350, Col: 72}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 367, Col: 72}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var19))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 29, "\" enctype=\"multipart/form-data\"><input type=\"hidden\" name=\"gorilla.csrf.Token\" value=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 30, "\" enctype=\"multipart/form-data\"><input type=\"hidden\" name=\"gorilla.csrf.Token\" value=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var20 string
 		templ_7745c5c3_Var20, templ_7745c5c3_Err = templ.JoinStringErrs(csrfToken)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 351, Col: 72}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 368, Col: 72}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var20))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 30, "\"> <input type=\"hidden\" name=\"product_id\"><div class=\"row g-3\"><div class=\"col-12\"><label for=\"product_name\" class=\"form-label\">Nombre del Product</label> <input id=\"product_name\" name=\"product_name\" type=\"text\" class=\"form-control\"></div><div class=\"col-md-12\"><label class=\"form-label\">Categoria</label> <select id=\"product_category\" name=\"product_category\" class=\"form-select\" required><option value=\"\">Selecionar Categoria</option> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 31, "\"> <input type=\"hidden\" name=\"product_id\"><div class=\"row g-3\"><div class=\"col-12\"><label for=\"product_name\" class=\"form-label\">Nombre del Product</label> <input id=\"product_name\" name=\"product_name\" type=\"text\" class=\"form-control\"></div><div class=\"col-md-12\"><label class=\"form-label\">Categoria</label> <select id=\"product_category\" name=\"product_category\" class=\"form-select\" required><option value=\"\">Selecionar Categoria</option> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for id, category := range getAllCategories() {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 31, "<option value=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 32, "<option value=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var21 string
 			templ_7745c5c3_Var21, templ_7745c5c3_Err = templ.JoinStringErrs(id)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 363, Col: 37}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 380, Col: 37}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var21))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 32, "\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 33, "\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var22 string
 			templ_7745c5c3_Var22, templ_7745c5c3_Err = templ.JoinStringErrs(category)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 363, Col: 48}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/registerProduct.templ`, Line: 380, Col: 48}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var22))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 33, "</option>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 34, "</option>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 34, "</select></div><div class=\"col-md-6\"><label for=\"product_price\" class=\"form-label\">Precio</label> <input id=\"product_price\" name=\"product_price\" type=\"number\" class=\"form-control\" x-model=\"form.price\" step=\"0.01\" required></div><div class=\"col-md-6\"><label for=\"product_stock\" class=\"form-label\">Cantidad disponible</label> <input id=\"product_stock\" name=\"product_stock\" type=\"number\" class=\"form-control\" x-model=\"form.stock\" required></div><div class=\"col-12\"><label for=\"product_description\" class=\"form-label\">Descripcion</label> <textarea id=\"product_description\" name=\"product_description\" class=\"form-control\" x-model=\"form.description\" rows=\"3\"></textarea></div><div class=\"col-12\"><label for=\"formFile\" class=\"form-label\">Default file input example</label> <input name=\"images\" class=\"form-control\" type=\"file\" id=\"formFile\" multiple onchange=\"showFiles(this)\"></div><div class=\"col-12\"><div class=\"row\" id=\"imagePreviews\"></div></div></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button> <button type=\"submit\" class=\"btn btn-primary\">Save Product</button></div></form>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 35, "</select></div><div class=\"col-md-6\"><label for=\"product_price\" class=\"form-label\">Precio</label> <input id=\"product_price\" name=\"product_price\" type=\"number\" class=\"form-control\" x-model=\"form.price\" step=\"0.01\" required></div><div class=\"col-md-6\"><label for=\"product_stock\" class=\"form-label\">Cantidad disponible</label> <input id=\"product_stock\" name=\"product_stock\" type=\"number\" class=\"form-control\" x-model=\"form.stock\" required></div><div class=\"col-12\"><label for=\"product_description\" class=\"form-label\">Descripcion</label> <textarea id=\"product_description\" name=\"product_description\" class=\"form-control\" x-model=\"form.description\" rows=\"3\"></textarea></div><div class=\"col-12\"><label for=\"formFile\" class=\"form-label\">Default file input example</label> <input name=\"images\" class=\"form-control\" type=\"file\" id=\"formFile\" multiple onchange=\"showFiles(this)\"></div><div class=\"col-12\"><div class=\"row\" id=\"imagePreviews\"></div></div></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button> <button type=\"submit\" class=\"btn btn-primary\">Save Product</button></div></form>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -404,7 +413,8 @@ func formProduct(csrfToken string) templ.Component {
 }
 
 func getProduct(sku string) dtos.Product {
-	product, err := api.GetProductBySKU(context.TODO(), "http://localhost:8080/api/v1/", sku)
+	apiURL := env.GetString("API_URL", "http://localhost:8080/api/v1/")
+	product, err := api.GetProductBySKU(context.TODO(), apiURL, sku)
 	if err != nil {
 		return dtos.Product{}
 	}

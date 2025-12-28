@@ -3,6 +3,12 @@ package views
 templ RegisterCategory(title string, csrfToken string) {
     @adminBaseLayout(title) {
         <div class="container-fluid p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">{title}</h1>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                    <i class="bi bi-plus-lg me-2"></i>Agregar Categoria
+                </button>
+            </div>
             <!-- Contact Form -->
             <div class="row g-4 mb-5">
                 <div class="col-lg-1"></div>
@@ -14,40 +20,58 @@ templ RegisterCategory(title string, csrfToken string) {
                             </h5>
                         </div>
                         <div class="card-body">
-                            <form method="post" action={templ.SafeURL("/admin/category/register")}>
-                                <input type="hidden" name="gorilla.csrf.Token" value={ csrfToken } />
-                                <div class="row g-3">
-                                    <div class="col-md-12">
-                                        <div class="form-group floating-label">
-                                            <input 
-                                                type="text" 
-                                                class="form-control" 
-                                                name="category_name" 
-                                            >
-                                            <label class="form-label">Nombre de la Categoria</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group floating-label">
-                                            <input 
-                                                type="text" 
-                                                class="form-control" 
-                                                name="category_description" 
-                                            >
-                                            <label class="form-label" for="category_description">Descripcion de la categoria</label>
-                                            <div class="invalid-feedback" x-show="errors.email" x-text="errors.email"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-secondary">Guardar</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <p class="text-muted mb-0">Usa el boton para agregar una nueva categoria.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-1"></div>
             </div>
         </div>
+
+        <div class="modal fade" id="categoryModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agregar Categoria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        @formCategory(csrfToken)
+                    </div>
+                </div>
+            </div>
+        </div>
     }
+}
+
+templ formCategory(csrfToken string) {
+    <form method="post" action={templ.SafeURL("/admin/category/register")}>
+        <input type="hidden" name="gorilla.csrf.Token" value={ csrfToken } />
+        <div class="row g-3">
+            <div class="col-md-12">
+                <div class="form-group floating-label">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        name="category_name" 
+                    >
+                    <label class="form-label">Nombre de la Categoria</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group floating-label">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        name="category_description" 
+                    >
+                    <label class="form-label" for="category_description">Descripcion de la categoria</label>
+                    <div class="invalid-feedback" x-show="errors.email" x-text="errors.email"></div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-secondary">Guardar</button>
+            </div>
+        </div>
+    </form>
 }
