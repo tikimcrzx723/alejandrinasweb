@@ -2,11 +2,13 @@ package views
 
 import "time"
 import "github.com/tikimcrzx723/alejandrinasweb/internal/api"
+import "github.com/tikimcrzx723/alejandrinasweb/internal/env"
 import "context"
 import "github.com/tikimcrzx723/alejandrinasweb/routes/contexts"
 
 func getAllCategories() map[int]string {
-  categories, err := api.GetAllCategories(context.Background(), "http://localhost:8080/api/v1")
+  apiURL := env.GetString("API_URL", "http://localhost:8080/api/v1")
+  categories, err := api.GetAllCategories(context.Background(), apiURL)
 	if err != nil {
 		return nil
 	}

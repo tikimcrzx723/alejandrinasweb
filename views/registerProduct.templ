@@ -2,6 +2,7 @@ package views
 
 import "github.com/tikimcrzx723/alejandrinasweb/internal/dtos"
 import "github.com/tikimcrzx723/alejandrinasweb/internal/api"
+import "github.com/tikimcrzx723/alejandrinasweb/internal/env"
 import "context"
 
 templ RegisterProduct(title string, csrfToken string, products dtos.ProductResponse) {
@@ -392,7 +393,8 @@ templ formProduct(csrfToken string) {
 }
 
 func getProduct(sku string) dtos.Product {
-    product, err := api.GetProductBySKU(context.TODO(), "http://localhost:8080/api/v1/", sku)
+    apiURL := env.GetString("API_URL", "http://localhost:8080/api/v1/")
+    product, err := api.GetProductBySKU(context.TODO(), apiURL, sku)
     if err != nil {
         return dtos.Product{}
     }
