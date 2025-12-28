@@ -49,6 +49,7 @@ func createAuthSession(
 		Path:     "/",
 		MaxAge:   maxAge,
 		HttpOnly: true,
+		Secure:   true,
 	}
 
 	s.Values[authUserIDKey] = user.Data.User.ID
